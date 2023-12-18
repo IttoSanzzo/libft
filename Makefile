@@ -6,7 +6,7 @@
 #    By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	       #
 #						  +#+#+#+#+#+	+#+	       #
 #    Created: 2023/11/26 19:20:16 by marcosv2	       #+#    #+#	       #
-#    Updated: 2023/12/18 14:40:29 by marcosv2         ###   ########.fr        #
+#    Updated: 2023/12/18 15:01:48 by marcosv2         ###   ########.fr        #
 #									       #
 # **************************************************************************** #
 
@@ -167,8 +167,11 @@ re		: fclean all
 
 # Personals
 
+normiet		:
+	@norminette | grep Error! | wc -l
+
 tc		: all
-	@$(C_COMP) $(C_FLAG) -o COMPILADO.out libftmain.c libft.a
+	@$(C_COMP) $(C_FLAG) -o COMPILADO.out mainlibft.c libft.a
 
 ohayou		: tc
 	@./COMPILADO.out ohayou
