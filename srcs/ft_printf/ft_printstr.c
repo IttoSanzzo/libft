@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/10/19 14:55:03 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/11/28 16:51:32 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/18 15:31:01 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -17,10 +17,7 @@ int	ft_printstr(char *str)
 	int	i;
 
 	if (!(str))
-	{
-		write(1, "(null)", 6);
-		return (6);
-	}
+		return (write(1, "(null)", 6));
 	i = -1;
 	while (str[++i])
 		write(1, &str[i], 1);

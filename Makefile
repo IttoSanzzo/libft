@@ -6,7 +6,7 @@
 #    By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	       #
 #						  +#+#+#+#+#+	+#+	       #
 #    Created: 2023/11/26 19:20:16 by marcosv2	       #+#    #+#	       #
-#    Updated: 2023/12/18 15:01:48 by marcosv2         ###   ########.fr        #
+#    Updated: 2023/12/18 15:32:26 by marcosv2         ###   ########.fr        #
 #									       #
 # **************************************************************************** #
 
@@ -100,6 +100,7 @@ F_SRCS	+= $(addprefix $(D_SRCS)$(DS_TAB), $(N_TAB))
 
 DS_PRINTF	= ft_printf/
 N_PRINTF	= ft_printf.c			\
+		  ft_printc.c			\
 		  ft_ftypes.c			\
 		  ft_printpercent.c		\
 		  ft_printchar.c		\
@@ -168,7 +169,7 @@ re		: fclean all
 # Personals
 
 normiet		:
-	@norminette | grep Error! | wc -l
+	@norminette -R CheckForbiddenSourceHeader | grep Error! | wc -l
 
 tc		: all
 	@$(C_COMP) $(C_FLAG) -o COMPILADO.out mainlibft.c libft.a

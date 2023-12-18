@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/10/27 19:08:14 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/16 01:02:14 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/18 15:48:16 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -18,6 +18,16 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdint.h>
+
+//// Macros
+///Colors
+# define C_WHITE "\033[0m"
+# define C_RED "\033[38;5;196m"
+# define C_LBLUE "\033[38;5;32m"
+# define C_BROWN "\033[38;5;130m"
+# define C_DBLUE "\033[38;5;21m"
+# define C_NCYAN "\033[38;5;37m"
+# define C_GREEN "\033[38;5;40m"
 
 // Struct Define
 typedef struct s_list
@@ -94,6 +104,7 @@ int		ft_lstsize(t_list *lst);
 //// ft_printf
 void	ft_lputchar(int c, int *len);
 int		ft_printf(const char *str, ...);
+int		ft_printc(char *color, const char *str, ...);
 int		ft_ftypes(va_list args, const char format);
 int		ft_printpercent(void);
 int		ft_printchar(int c);
