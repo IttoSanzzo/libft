@@ -6,7 +6,7 @@
 #    By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	       #
 #						  +#+#+#+#+#+	+#+	       #
 #    Created: 2023/11/26 19:20:16 by marcosv2	       #+#    #+#	       #
-#    Updated: 2023/12/18 14:35:49 by marcosv2         ###   ########.fr        #
+#    Updated: 2023/12/18 14:40:29 by marcosv2         ###   ########.fr        #
 #									       #
 # **************************************************************************** #
 
@@ -161,6 +161,7 @@ clean		:
 fclean		: clean
 	@echo "$(P_DBLUE)Deleting $(NAME)...$(P_WHITE)"
 	@${C_REMO} $(NAME)
+	@${C_REMO} COMPILADO.out
 
 re		: fclean all
 
