@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/10/27 20:40:28 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/10/27 20:40:38 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/18 16:08:59 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static char	*ft_newstring(char const *str, int count, int start, char c)
 	int			count2;
 
 	count2 = 0;
-	temp_string = (char *)malloc(sizeof(char) * (count - start + 1));
+	temp_string = (char *)ft_calloc((count - start + 1), sizeof(char));
 	if (!temp_string)
 		return (NULL);
 	while (str[start] != c && str[start])

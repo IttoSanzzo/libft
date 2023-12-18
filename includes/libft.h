@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/10/27 19:08:14 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/18 15:48:16 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/18 17:09:15 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ typedef struct s_list
 
 ////// SOURCE FILES
 //// ft_isx
+int		ft_open_quotes(char *s, char c);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -66,6 +67,7 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putstr(char *s);
+void	ft_putnbr(int nb);
 
 //// ft_str
 size_t	ft_strlen(const char *str);

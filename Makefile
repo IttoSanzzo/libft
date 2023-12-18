@@ -6,7 +6,7 @@
 #    By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	       #
 #						  +#+#+#+#+#+	+#+	       #
 #    Created: 2023/11/26 19:20:16 by marcosv2	       #+#    #+#	       #
-#    Updated: 2023/12/18 15:32:26 by marcosv2         ###   ########.fr        #
+#    Updated: 2023/12/18 17:09:39 by marcosv2         ###   ########.fr        #
 #									       #
 # **************************************************************************** #
 
@@ -31,7 +31,8 @@ N_ISX		= ft_isalnum.c			\
 		  ft_isalpha.c			\
 		  ft_isascii.c			\
 		  ft_isdigit.c			\
-		  ft_isprint.c
+		  ft_isprint.c			\
+		  ft_open_quotes.c
 F_SRCS	+= $(addprefix $(D_SRCS)$(DS_ISX), $(N_ISX))
 
 DS_TOX		= ft_tox/
@@ -57,7 +58,8 @@ N_PUT		= ft_putchar_fd.c		\
 		  ft_putendl_fd.c		\
 		  ft_putnbr_fd.c		\
 		  ft_putstr.c			\
-		  ft_putstr_fd.c
+		  ft_putstr_fd.c		\
+		  ft_putnbr.c
 F_SRCS	+= $(addprefix $(D_SRCS)$(DS_PUT), $(N_PUT))
 
 DS_STR		= ft_str/
