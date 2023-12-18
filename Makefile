@@ -6,7 +6,7 @@
 #    By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	       #
 #						  +#+#+#+#+#+	+#+	       #
 #    Created: 2023/11/26 19:20:16 by marcosv2	       #+#    #+#	       #
-#    Updated: 2023/12/16 01:00:56 by marcosv2         ###   ########.fr        #
+#    Updated: 2023/12/18 14:35:49 by marcosv2         ###   ########.fr        #
 #									       #
 # **************************************************************************** #
 
@@ -164,6 +164,17 @@ fclean		: clean
 
 re		: fclean all
 
+# Personals
+
+tc		: all
+	@$(C_COMP) $(C_FLAG) -o COMPILADO.out libftmain.c libft.a
+
+ohayou		: tc
+	@./COMPILADO.out ohayou
+
+valt		: tc
+	@valgrind ./COMPILADO.out default
+
 # Phony
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re tc ohayou valt
