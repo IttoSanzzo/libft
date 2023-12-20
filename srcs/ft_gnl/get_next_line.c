@@ -6,25 +6,13 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/12/20 14:09:50 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/20 14:10:09 by marcosv2         ###   ########.fr       */
-/*									      */
-/* ************************************************************************** */
-
-/* ************************************************************************** */
-/*									      */
-/*							  :::	   ::::::::   */
-/*   get_next_line.c					:+:	 :+:	:+:   */
-/*						      +:+ +:+	      +:+     */
-/*   By: gupiment <gupiment@student.42.rio>	    +#+  +:+	   +#+	      */
-/*						  +#+#+#+#+#+	+#+	      */
-/*   Created: 2023/11/29 03:59:08 by gupiment	       #+#    #+#	      */
-/*   Updated: 2023/11/29 03:59:10 by gupiment	      ###   ########.fr       */
+/*   Updated: 2023/12/20 14:15:00 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_sub(char **rest, char **line)
+static char	*ft_sub(char **rest, char **line)
 {
 	char	*str;
 
@@ -53,7 +41,7 @@ char	*ft_sub(char **rest, char **line)
 	return (str);
 }
 
-char	*ft_sub_2(char **rest, char **line, char **buf)
+static char	*ft_sub_2(char **rest, char **line, char **buf)
 {
 	char	*str;
 	char	*tmp;

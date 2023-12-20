@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/10/27 19:08:14 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/20 14:13:09 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/20 14:15:26 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -120,6 +120,9 @@ int		ft_printunsigned(unsigned int nb);
 int		ft_printhex(int nb, const char format);
 int		ft_printpointer(unsigned long long ptr);
 int		ft_nbrlen(int nb);
+
+//// ft_gnl
+char	*get_next_line(int fd);
 
 //// ft_readline
 char	*ft_readline(char *prompt);
