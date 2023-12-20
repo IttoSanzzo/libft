@@ -6,10 +6,10 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/12/18 16:42:19 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/18 19:20:07 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/20 14:08:08 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
-
+/*
 #include "libft.h"
 
 static int	ft_is_close(char *s, char c)
@@ -52,4 +52,4 @@ int	ft_open_quotes(char *s, char c)
 		}
 	}
 	return (0);
-}
+}*/

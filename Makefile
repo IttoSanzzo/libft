@@ -6,7 +6,7 @@
 #    By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	       #
 #						  +#+#+#+#+#+	+#+	       #
 #    Created: 2023/11/26 19:20:16 by marcosv2	       #+#    #+#	       #
-#    Updated: 2023/12/18 17:09:39 by marcosv2         ###   ########.fr        #
+#    Updated: 2023/12/20 14:12:05 by marcosv2         ###   ########.fr        #
 #									       #
 # **************************************************************************** #
 
@@ -114,6 +114,10 @@ N_PRINTF	= ft_printf.c			\
 		  ft_printf_utils.c
 F_SRCS	+= $(addprefix $(D_SRCS)$(DS_PRINTF), $(N_PRINTF))
 
+DS_GNL		= ft_gnl/
+N_GNL		= get_next_line.c
+F_SRCS	+= $(addprefix $(D_SRCS)$(DS_GNL), $(N_GNL))
+
 DS_READLINE	= ft_readline/
 N_READLINE	= ft_readline.c
 F_SRCS	+= $(addprefix $(D_SRCS)$(DS_READLINE), $(N_READLINE))
@@ -128,6 +132,7 @@ N_OBJS	= $(N_ISX:.c=.o)	\
 	  $(N_LST:.c=.o)	\
 	  $(N_TAB:.c=.o)	\
 	  $(N_PRINTF:.c=.o)	\
+	  $(N_GNL:.c=.o)	\
 	  $(N_READLINE:.c=.o)
 F_OBJS	= $(addprefix $(D_OBJS), $(N_OBJS))
 

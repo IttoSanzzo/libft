@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/10/27 19:08:14 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/18 17:09:15 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/20 14:13:09 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@
 # include <stdint.h>
 
 //// Macros
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
+# endif
+
 ///Colors
 # define C_WHITE "\033[0m"
 # define C_RED "\033[38;5;196m"
