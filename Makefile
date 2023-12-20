@@ -6,7 +6,7 @@
 #    By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	       #
 #						  +#+#+#+#+#+	+#+	       #
 #    Created: 2023/11/26 19:20:16 by marcosv2	       #+#    #+#	       #
-#    Updated: 2023/12/20 14:12:05 by marcosv2         ###   ########.fr        #
+#    Updated: 2023/12/20 16:40:22 by marcosv2         ###   ########.fr        #
 #									       #
 # **************************************************************************** #
 
@@ -66,6 +66,7 @@ DS_STR		= ft_str/
 N_STR		= ft_strlen.c			\
 		  ft_rejoin.c			\
 		  ft_split.c			\
+		  ft_splitq.c			\
 		  ft_strchr.c			\
 		  ft_strdup.c			\
 		  ft_striteri.c			\
@@ -97,7 +98,8 @@ F_SRCS	+= $(addprefix $(D_SRCS)$(DS_LST), $(N_LST))
 DS_TAB		= ft_tab/
 N_TAB		= ft_freetab.c		\
 		  ft_tabcpy.c		\
-		  ft_tablen.c
+		  ft_tablen.c		\
+		  ft_puttab.c
 F_SRCS	+= $(addprefix $(D_SRCS)$(DS_TAB), $(N_TAB))
 
 DS_PRINTF	= ft_printf/
