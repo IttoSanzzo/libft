@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/12/18 16:42:19 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/20 16:21:29 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/23 21:23:42 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -20,8 +20,15 @@ static int	count_quotes(char *s, char c)
 	count = 0;
 	i = -1;
 	while (s[++i])
-		if (s[i] == c && ((i == 0) || (i > 0 && s[i - 1] != '\\')))
+	{
+		if (s[i] == '\\' && s[i + 1])
+		{
+			i++;
+			continue ;
+		}
+		if (s[i] == c)
 			count++;
+	}
 	return (count % 2);
 }
 

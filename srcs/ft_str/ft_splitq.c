@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/10/27 20:40:28 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/23 21:04:21 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/23 21:15:02 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -46,16 +46,14 @@ static int	wlen(char const *s, char c)
 	wlen = 0;
 	while (s[++i])
 	{
-		if (s[i] == '\\')
-			if (s[++i])
-			{
-				wlen++;
-				continue ;
-			}
-		if (s[i] == c)
+		if (s[i] == '\\' || s[i] == c)
 		{
-			open = -open;
-			continue ;
+			if (s[i] == '\\' && s[++i])
+				wlen++;
+			if (s[i] == c)
+				open = -open;
+			if (s[i])
+				continue ;
 		}
 		if ((s[i] == ' ' && open == -1) || s[i] == '\0')
 			break ;
