@@ -6,18 +6,20 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/12/12 20:48:55 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/12 20:50:00 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/23 22:03:50 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_freetab(char **tab)
+char	**ft_freetab(char **tab)
 {
 	int	i;
 
 	i = -1;
 	while (tab[++i])
 		free(tab[i]);
-	free(tab);
+	if (tab)
+		free(tab);
+	return (NULL);
 }

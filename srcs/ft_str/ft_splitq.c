@@ -6,13 +6,13 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/10/27 20:40:28 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/23 21:15:02 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/23 23:41:38 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	wc(char const *s, char c)
+static int	wc_q(char const *s, char c)
 {
 	int	wcount;
 	int	open;
@@ -35,7 +35,7 @@ static int	wc(char const *s, char c)
 	return (wcount);
 }
 
-static int	wlen(char const *s, char c)
+static int	wlq(char const *s, char c)
 {
 	int	wlen;
 	int	open;
@@ -62,51 +62,59 @@ static int	wlen(char const *s, char c)
 	return (wlen);
 }
 
-/*
-static char	*ft_newstring(char const *str, int count, int start, char c)
+static char	*next_quote_q(char const *s, int *i, char c, char **tab)
 {
-	char		*temp_string;
-	int			count2;
+	int		open;
+	int		p;
+	char	*quote;
 
-	count2 = 0;
-	temp_string = (char *)ft_calloc((count - start + 1), sizeof(char));
-	if (!temp_string)
-		return (NULL);
-	while (str[start] != c && str[start])
-		temp_string[count2++] = str[start++];
-	temp_string[count2] = '\0';
-	return (temp_string);
+	quote = (char *)ft_calloc(wlq((char *)(s + i[0]--), c) + 1, sizeof(char));
+	if (!quote)
+		return ((char *)ft_freetab(tab));
+	open = -1;
+	p = -1;
+	while (s[++i[0]])
+	{
+		if (s[i[0]] == '\\' || s[i[0]] == c)
+		{
+			if (s[i[0]] == '\\' && s[++i[0]])
+				quote[++p] = s[i[0]];
+			if (s[i[0]] == c)
+				open = -open;
+			if (s[i[0]])
+				continue ;
+		}
+		if ((s[i[0]] == ' ' && open == -1) || s[i[0]] == '\0')
+			break ;
+		quote[++p] = s[i[0]];
+	}
+	return (quote);
 }
-*/
+
 char	**ft_splitq(char const *s, char c)
 {
-/*	char	**array;
-	int		count;
-	int		array_count;
-	int		start;
+	int		i[1];
+	int		wc;
+	int		y;
+	char	**tab;
 
 	if (!s)
 		return (NULL);
-	count = 0;
-	array_count = 0;
-	array = (char **)malloc(sizeof(char *) * (wc(s, c) + 1));
-	if (!array)
+	wc = wc_q(s, c);
+	tab = (char **)ft_calloc(wc + 1, sizeof(char *));
+	if (!tab)
 		return (NULL);
-	while (array_count < wc(s, c))
+	i[0] = 0;
+	y = -1;
+	while (s[i[0]] && ++y < wc)
 	{
-		if (s[count] != c && s[count])
-		{
-			start = count;
-			while (s[count] != c && s[count])
-				count++;
-			array[array_count++] = ft_newstring(s, count, start, c);
-		}
-		count++;
+		while (s[i[0]] == ' ')
+			i[0]++;
+		if (!s[i[0]])
+			break ;
+		tab[y] = next_quote_q(s, i, c, tab);
+		if (!tab)
+			return (NULL);
 	}
-	array[array_count] = NULL;
-	return (array);
-	*/
-	ft_printc(C_NCYAN, "Palavras..: %d\n", wc(s, c));
-	ft_printc(C_NCYAN, "wlen..: %d\n", wlen(s, c));
-	return (NULL);
+	return (tab);
 }

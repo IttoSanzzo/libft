@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/10/27 19:08:14 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/20 16:39:11 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/23 22:05:44 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
 //// ft_tab
 char	**ft_tabcpy(char **old);
-void	ft_freetab(char **tab);
+char	**ft_freetab(char **tab);
 void	ft_puttab(char **tab, char *prompt);
 int		ft_tablen(char **tab);
 
