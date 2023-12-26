@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/10/27 20:40:28 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/23 23:41:38 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/26 01:13:40 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -68,32 +68,32 @@ static char	*next_quote_q(char const *s, int *i, char c, char **tab)
 	int		p;
 	char	*quote;
 
-	quote = (char *)ft_calloc(wlq((char *)(s + i[0]--), c) + 1, sizeof(char));
+	quote = (char *)ft_calloc(wlq((char *)(s + (*i)--), c) + 1, sizeof(char));
 	if (!quote)
 		return ((char *)ft_freetab(tab));
 	open = -1;
 	p = -1;
-	while (s[++i[0]])
+	while (s[++(*i)])
 	{
-		if (s[i[0]] == '\\' || s[i[0]] == c)
+		if (s[*i] == '\\' || s[*i] == c)
 		{
-			if (s[i[0]] == '\\' && s[++i[0]])
-				quote[++p] = s[i[0]];
-			if (s[i[0]] == c)
+			if (s[*i] == '\\' && s[++(*i)])
+				quote[++p] = s[*i];
+			if (s[*i] == c)
 				open = -open;
-			if (s[i[0]])
+			if (s[*i])
 				continue ;
 		}
-		if ((s[i[0]] == ' ' && open == -1) || s[i[0]] == '\0')
+		if ((s[*i] == ' ' && open == -1) || s[*i] == '\0')
 			break ;
-		quote[++p] = s[i[0]];
+		quote[++p] = s[*i];
 	}
 	return (quote);
 }
 
 char	**ft_splitq(char const *s, char c)
 {
-	int		i[1];
+	int		i;
 	int		wc;
 	int		y;
 	char	**tab;
@@ -104,15 +104,15 @@ char	**ft_splitq(char const *s, char c)
 	tab = (char **)ft_calloc(wc + 1, sizeof(char *));
 	if (!tab)
 		return (NULL);
-	i[0] = 0;
+	i = 0;
 	y = -1;
-	while (s[i[0]] && ++y < wc)
+	while (s[i] && ++y < wc)
 	{
-		while (s[i[0]] == ' ')
-			i[0]++;
-		if (!s[i[0]])
+		while (s[i] == ' ')
+			i++;
+		if (!s[i])
 			break ;
-		tab[y] = next_quote_q(s, i, c, tab);
+		tab[y] = next_quote_q(s, &i, c, tab);
 		if (!tab)
 			return (NULL);
 	}
