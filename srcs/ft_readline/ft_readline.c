@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/12/08 09:13:14 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/24 21:09:29 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/25 21:40:25 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_readline(char *prompt)
 		return (NULL);
 	while (*buffer != '\n')
 	{
-		line = ft_rejoin(line, buffer);
+		line = ft_sujoin(line, buffer);
 		while (read(0, buffer, 1) == 0)
 			buffer[0] = 0;
 	}

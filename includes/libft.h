@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/10/27 19:08:14 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/25 14:17:45 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/25 21:39:26 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -91,7 +91,9 @@ char	**ft_split(char const *s, char c);
 char	**ft_splitq(char const *s, char c);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
-char	*ft_rejoin(char *s1, char *s2);
+char	*ft_freejoin(char *s1, char *s2);
+char	*ft_prejoin(char *s1, char *s2);
+char	*ft_sujoin(char *s1, char *s2);
 char	*ft_strrep(char *body, char *news);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
@@ -105,6 +107,7 @@ char	**ft_tabrem_end(char **old);
 char	**ft_tabrem_bgn(char **old);
 char	**ft_tabrem_n(char **old, int n);
 char	*ft_tabsmove(char **tab, int start, int end);
+int		ft_getarg_p(char **tab, char const *name);
 int		ft_tablen(char **tab);
 
 //// ft_list

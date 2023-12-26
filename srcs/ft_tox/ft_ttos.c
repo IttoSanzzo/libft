@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/09/18 16:40:57 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/25 13:46:56 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/25 23:33:20 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ char	*ft_ttos(char **tab, char *sep)
 	char	*str;
 	char	*ptr;
 
+	if (!tab[0])
+		return (ft_strdup(""));
 	f_len = ft_f_len(tab, ft_strlen(sep));
 	str = (char *)ft_calloc((f_len + 1), sizeof(char));
 	if (!str)

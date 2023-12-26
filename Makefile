@@ -6,7 +6,7 @@
 #    By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	       #
 #						  +#+#+#+#+#+	+#+	       #
 #    Created: 2023/11/26 19:20:16 by marcosv2	       #+#    #+#	       #
-#    Updated: 2023/12/25 14:18:32 by marcosv2         ###   ########.fr        #
+#    Updated: 2023/12/25 21:39:07 by marcosv2         ###   ########.fr        #
 #									       #
 # **************************************************************************** #
 
@@ -66,7 +66,9 @@ F_SRCS	+= $(addprefix $(D_SRCS)$(DS_PUT), $(N_PUT))
 
 DS_STR		= ft_str/
 N_STR		= ft_strlen.c			\
-		  ft_rejoin.c			\
+		  ft_freejoin.c			\
+		  ft_prejoin.c			\
+		  ft_sujoin.c			\
 		  ft_split.c			\
 		  ft_splitq.c			\
 		  ft_strchr.c			\
@@ -108,7 +110,8 @@ N_TAB		= ft_freetab.c		\
 		  ft_tabrem_end.c	\
 		  ft_tabrem_bgn.c	\
 		  ft_tabrem_n.c		\
-		  ft_tabsmove.c
+		  ft_tabsmove.c		\
+		  ft_getarg_p.c
 F_SRCS	+= $(addprefix $(D_SRCS)$(DS_TAB), $(N_TAB))
 
 DS_PRINTF	= ft_printf/
