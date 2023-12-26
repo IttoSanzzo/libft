@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/10/27 19:08:14 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/25 21:39:26 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/26 00:14:38 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -95,6 +95,7 @@ char	*ft_freejoin(char *s1, char *s2);
 char	*ft_prejoin(char *s1, char *s2);
 char	*ft_sujoin(char *s1, char *s2);
 char	*ft_strrep(char *body, char *news);
+char	*ft_strdrep(char *body, char *news);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
 //// ft_tab
