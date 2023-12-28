@@ -6,7 +6,7 @@
 #    By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	       #
 #						  +#+#+#+#+#+	+#+	       #
 #    Created: 2023/11/26 19:20:16 by marcosv2	       #+#    #+#	       #
-#    Updated: 2023/12/27 21:27:57 by marcosv2         ###   ########.fr        #
+#    Updated: 2023/12/27 21:41:16 by marcosv2         ###   ########.fr        #
 #									       #
 # **************************************************************************** #
 
@@ -53,7 +53,8 @@ N_MEM		= ft_calloc.c			\
 		  ft_memmove.c			\
 		  ft_memset.c			\
 		  ft_free.c			\
-		  ft_gmem.c
+		  ft_gptr.c			\
+		  ft_gint.c
 F_SRCS	+= $(addprefix $(D_SRCS)$(DS_MEM), $(N_MEM))
 
 DS_PUT		= ft_put/

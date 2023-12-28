@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/10/27 19:08:14 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/27 21:28:11 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/27 22:02:07 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -23,9 +23,17 @@
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1
 # endif
+# ifndef INT_MIN
+#  define INT_MIN -2147483648
+# endif
+# ifndef INT_MAX
+#  define INT_MAX 2147483647
+# endif
 # ifndef GMEM_BUFFER
 #  define GMEM_BUFFER 1024
 # endif
+# define GETPV 0
+# define GETIV -2147483650.3
 
 ///Colors
 # define C_WHITE "\033[0m"
@@ -68,7 +76,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_memdel(void *ptr);
 void	*ft_free(void *any);
-void	*ft_gmem(void *ptr, int id);
+void	*ft_gptr(void *ptr, size_t id);
+double	ft_gint(double val, size_t id);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 
 //// ft_put
