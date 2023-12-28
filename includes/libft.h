@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/10/27 19:08:14 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/27 20:59:20 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/27 21:20:33 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@
 //// Macros
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1
+# endif
+# ifndef GMEM_BUFFER
+#  define GMEM_BUFFER 1024
 # endif
 
 ///Colors
@@ -65,6 +68,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_memdel(void *ptr);
 void	*ft_free(void *any);
+void	*ft_gmem(void *ptr, int id);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 
 //// ft_put
