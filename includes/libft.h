@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/10/27 19:08:14 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/26 00:14:38 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/27 20:59:20 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_memdel(void *ptr);
+void	*ft_free(void *any);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 
 //// ft_put
@@ -71,9 +72,11 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+void	ft_putchar(int c);
 void	ft_putstr(char *s);
 void	ft_putnbr(int nb);
 void	ft_puttab(char **tab, char *prompt);
+void	ft_putclear(void);
 
 //// ft_str
 size_t	ft_strlen(const char *str);

@@ -6,7 +6,7 @@
 #    By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	       #
 #						  +#+#+#+#+#+	+#+	       #
 #    Created: 2023/11/26 19:20:16 by marcosv2	       #+#    #+#	       #
-#    Updated: 2023/12/26 00:15:54 by marcosv2         ###   ########.fr        #
+#    Updated: 2023/12/27 20:58:47 by marcosv2         ###   ########.fr        #
 #									       #
 # **************************************************************************** #
 
@@ -36,10 +36,10 @@ N_ISX		= ft_isalnum.c			\
 F_SRCS	+= $(addprefix $(D_SRCS)$(DS_ISX), $(N_ISX))
 
 DS_TOX		= ft_tox/
-N_TOX		= ft_itoa.c		\
-		  ft_ttos.c		\
-		  ft_atoi.c		\
-		  ft_tolower.c		\
+N_TOX		= ft_itoa.c			\
+		  ft_ttos.c			\
+		  ft_atoi.c			\
+		  ft_tolower.c			\
 		  ft_toupper.c
 F_SRCS	+= $(addprefix $(D_SRCS)$(DS_TOX), $(N_TOX))
 
@@ -51,17 +51,20 @@ N_MEM		= ft_calloc.c			\
 		  ft_memcpy.c			\
 		  ft_memdel.c			\
 		  ft_memmove.c			\
-		  ft_memset.c
+		  ft_memset.c			\
+		  ft_free.c
 F_SRCS	+= $(addprefix $(D_SRCS)$(DS_MEM), $(N_MEM))
 
 DS_PUT		= ft_put/
 N_PUT		= ft_putchar_fd.c		\
 		  ft_putendl_fd.c		\
 		  ft_putnbr_fd.c		\
-		  ft_putstr.c			\
 		  ft_putstr_fd.c		\
+		  ft_putchar.c			\
+		  ft_putstr.c			\
 		  ft_putnbr.c			\
-		  ft_puttab.c
+		  ft_puttab.c			\
+		  ft_putclear.c
 F_SRCS	+= $(addprefix $(D_SRCS)$(DS_PUT), $(N_PUT))
 
 DS_STR		= ft_str/
