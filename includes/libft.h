@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/10/27 19:08:14 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/27 21:20:33 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/27 21:28:11 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ void	ft_putchar(int c);
 void	ft_putstr(char *s);
 void	ft_putnbr(int nb);
 void	ft_puttab(char **tab, char *prompt);
+void	ft_putfclear(void);
 void	ft_putclear(void);
 
 //// ft_str
