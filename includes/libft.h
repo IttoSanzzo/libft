@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/10/27 19:08:14 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/27 22:26:25 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/28 00:24:46 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdint.h>
+# include <termios.h>
 
 //// Macros
 # ifndef BUFFER_SIZE
@@ -89,8 +90,6 @@ void	ft_putchar(int c);
 void	ft_putstr(char *s);
 void	ft_putnbr(int nb);
 void	ft_puttab(char **tab, char *prompt);
-void	ft_putfclear(void);
-void	ft_putclear(void);
 
 //// ft_str
 size_t	ft_strlen(const char *str);
@@ -125,8 +124,14 @@ char	**ft_tabrem_end(char **old);
 char	**ft_tabrem_bgn(char **old);
 char	**ft_tabrem_n(char **old, int n);
 char	*ft_tabsmove(char **tab, int start, int end);
-int		ft_getarg_p(char **tab, char const *name);
 int		ft_tablen(char **tab);
+
+//// ft_utils
+void	ft_putfclear(void);
+void	ft_putclear(void);
+void	ft_resetline(void);
+int		ft_getarg_p(char **tab, char const *name);
+int		ft_getchar(void);
 
 //// ft_list
 t_list	*ft_lstnew(void *content);

@@ -6,7 +6,7 @@
 #    By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	       #
 #						  +#+#+#+#+#+	+#+	       #
 #    Created: 2023/11/26 19:20:16 by marcosv2	       #+#    #+#	       #
-#    Updated: 2023/12/27 21:41:16 by marcosv2         ###   ########.fr        #
+#    Updated: 2023/12/28 00:23:50 by marcosv2         ###   ########.fr        #
 #									       #
 # **************************************************************************** #
 
@@ -65,9 +65,7 @@ N_PUT		= ft_putchar_fd.c		\
 		  ft_putchar.c			\
 		  ft_putstr.c			\
 		  ft_putnbr.c			\
-		  ft_puttab.c			\
-		  ft_putfclear.c		\
-		  ft_putclear.c
+		  ft_puttab.c
 F_SRCS	+= $(addprefix $(D_SRCS)$(DS_PUT), $(N_PUT))
 
 DS_STR		= ft_str/
@@ -108,18 +106,25 @@ N_LST		= ft_lstadd_back_bonus.c	\
 F_SRCS	+= $(addprefix $(D_SRCS)$(DS_LST), $(N_LST))
 
 DS_TAB		= ft_tab/
-N_TAB		= ft_freetab.c		\
-		  ft_tabcpy.c		\
-		  ft_tablen.c		\
-		  ft_tabadd_end.c	\
-		  ft_tabadd_bgn.c	\
-		  ft_tabadd_n.c		\
-		  ft_tabrem_end.c	\
-		  ft_tabrem_bgn.c	\
-		  ft_tabrem_n.c		\
-		  ft_tabsmove.c		\
-		  ft_getarg_p.c
+N_TAB		= ft_freetab.c			\
+		  ft_tabcpy.c			\
+		  ft_tablen.c			\
+		  ft_tabadd_end.c		\
+		  ft_tabadd_bgn.c		\
+		  ft_tabadd_n.c			\
+		  ft_tabrem_end.c		\
+		  ft_tabrem_bgn.c		\
+		  ft_tabrem_n.c			\
+		  ft_tabsmove.c
 F_SRCS	+= $(addprefix $(D_SRCS)$(DS_TAB), $(N_TAB))
+
+DS_UTILS	= ft_utils/
+N_UTILS		= ft_getarg_p.c			\
+		  ft_putfclear.c		\
+		  ft_putclear.c			\
+		  ft_resetline.c		\
+		  ft_getchar.c
+F_SRCS	+= $(addprefix $(D_SRCS)$(DS_UTILS), $(N_UTILS))
 
 DS_PRINTF	= ft_printf/
 N_PRINTF	= ft_printf.c			\
@@ -152,6 +157,7 @@ N_OBJS	= $(N_ISX:.c=.o)	\
 	  $(N_STR:.c=.o)	\
 	  $(N_LST:.c=.o)	\
 	  $(N_TAB:.c=.o)	\
+	  $(N_UTILS:.c=.o)	\
 	  $(N_PRINTF:.c=.o)	\
 	  $(N_GNL:.c=.o)	\
 	  $(N_READLINE:.c=.o)
