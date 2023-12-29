@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/12/29 10:35:22 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/29 10:55:43 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/29 11:40:16 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -38,4 +38,13 @@ void	rl_cleard(t_readline *rl)
 		ft_putstr(rl->prompt);
 	ft_putstr(rl->str);
 	rl_come_back(rl);
+}
+
+char	*rl_getprompt(char *prompt)
+{
+	static char	*save;
+
+	if (prompt)
+		save = prompt;
+	return (save);
 }

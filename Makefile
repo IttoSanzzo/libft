@@ -6,7 +6,7 @@
 #    By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	       #
 #						  +#+#+#+#+#+	+#+	       #
 #    Created: 2023/11/26 19:20:16 by marcosv2	       #+#    #+#	       #
-#    Updated: 2023/12/29 10:56:01 by marcosv2         ###   ########.fr        #
+#    Updated: 2023/12/29 16:43:20 by marcosv2         ###   ########.fr        #
 #									       #
 # **************************************************************************** #
 
@@ -131,7 +131,8 @@ DS_ANSI		= ft_ansi/
 N_ANSI		= ft_ansi_fclear.c		\
 		  ft_ansi_clear.c		\
 		  ft_ansi_resetl.c		\
-		  ft_ansi_drl.c
+		  ft_ansi_drl.c			\
+		  ft_ansi_drd.c
 F_SRCS	+= $(addprefix $(D_SRCS)$(DS_ANSI), $(N_ANSI))
 
 DS_UTILS	= ft_utils/
@@ -166,6 +167,7 @@ N_READLINE	= ft_sreadline.c		\
 		  ft_rlhistory.c		\
 		  rl_checks.c			\
 		  rl_moviments.c		\
+		  rl_go.c			\
 		  rl_specials.c			\
 		  rl_utils.c
 F_SRCS	+= $(addprefix $(D_SRCS)$(DS_READLINE), $(N_READLINE))

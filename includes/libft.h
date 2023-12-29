@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/10/27 19:08:14 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/29 10:50:00 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/29 16:29:40 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdint.h>
+# include <signal.h>
 # include <termios.h>
 
 //// Macros
@@ -32,6 +33,9 @@
 # endif
 # ifndef GMEM_BUFFER
 #  define GMEM_BUFFER 1024
+# endif
+# ifndef STDERR
+#  define STDERR 2
 # endif
 # define PUTV 1
 # define GETV 0
@@ -56,6 +60,7 @@ typedef struct s_list
 
 typedef struct s_readline
 {
+	int		cpos[2];
 	int		move;
 	int		hlen;
 	int		hpos;
@@ -151,6 +156,7 @@ int		ft_tablen(char **tab);
 
 //// ft_ansi
 void	ft_ansi_drl(char *prompt);
+void	ft_ansi_drd(char *prompt);
 void	ft_ansi_resetl(void);
 void	ft_ansi_fclear(void);
 void	ft_ansi_clear(void);
@@ -196,7 +202,10 @@ int		ft_rlconfig(int id, size_t act, int val);
 char	**ft_rlhistory(char *new);
 char	*ft_sreadline(char *prompt);
 char	*rl_init(t_readline *rl, char *prompt, int prt);
+char	*rl_getprompt(char *prompt);
 char	*ft_readline(char *prompt);
+void	rl_go_right(t_readline *rl);
+void	rl_go_left(t_readline *rl);
 void	rl_do_moviments(t_readline *rl);
 void	rl_do_home(t_readline *rl);
 void	rl_do_tab(t_readline *rl);

@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/12/29 10:37:55 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/29 10:46:34 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/29 16:36:50 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -25,12 +25,11 @@ void	rl_do_backspace(t_readline *rl)
 {
 	if (rl->pos > 0)
 	{
-		ft_ansi_drl("\b");
-		ft_putstr((char *)(rl->str + rl->pos));
 		rl->str = ft_strrem_n(rl->str, rl->pos - 1);
-		rl->pos--;
 		rl->len--;
-		rl_come_back(rl);
+		ft_ansi_drd("\033[u");
+		ft_putstr((char *)(rl->str));
+		rl_go_left(rl);
 	}
 }
 
@@ -48,11 +47,11 @@ static void	rl_do_delete(t_readline *rl)
 {
 	if (rl->pos < rl->len)
 	{
-		ft_ansi_drl(NULL);
-		ft_putstr((char *)(rl->str + rl->pos + 1));
 		rl->str = ft_strrem_n(rl->str, rl->pos);
 		rl->len--;
-		rl_come_back(rl);
+		ft_ansi_drd(NULL);
+		ft_putstr((char *)(rl->str + rl->pos++));
+		rl_go_left(rl);
 	}
 }
 
