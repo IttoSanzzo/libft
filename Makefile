@@ -6,7 +6,7 @@
 #    By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	       #
 #						  +#+#+#+#+#+	+#+	       #
 #    Created: 2023/11/26 19:20:16 by marcosv2	       #+#    #+#	       #
-#    Updated: 2023/12/29 05:59:01 by marcosv2         ###   ########.fr        #
+#    Updated: 2023/12/29 10:56:01 by marcosv2         ###   ########.fr        #
 #									       #
 # **************************************************************************** #
 
@@ -162,8 +162,12 @@ F_SRCS	+= $(addprefix $(D_SRCS)$(DS_GNL), $(N_GNL))
 DS_READLINE	= ft_readline/
 N_READLINE	= ft_sreadline.c		\
 		  ft_readline.c			\
+		  ft_rlconfig.c			\
 		  ft_rlhistory.c		\
-		  ft_rlconfig.c
+		  rl_checks.c			\
+		  rl_moviments.c		\
+		  rl_specials.c			\
+		  rl_utils.c
 F_SRCS	+= $(addprefix $(D_SRCS)$(DS_READLINE), $(N_READLINE))
 
 # Objects Finalization

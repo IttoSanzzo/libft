@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/10/27 19:08:14 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/29 07:42:52 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/29 10:50:00 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -190,9 +190,20 @@ int		ft_nbrlen(int nb);
 char	*get_next_line(int fd);
 
 //// ft_readline
+int		rl_checkmove(t_readline *rl);
+int		rl_checkreset(t_readline *rl);
 int		ft_rlconfig(int id, size_t act, int val);
-char	*ft_sreadline(char *prompt);
-char	*ft_readline(char *prompt);
 char	**ft_rlhistory(char *new);
+char	*ft_sreadline(char *prompt);
+char	*rl_init(t_readline *rl, char *prompt, int prt);
+char	*ft_readline(char *prompt);
+void	rl_do_moviments(t_readline *rl);
+void	rl_do_home(t_readline *rl);
+void	rl_do_tab(t_readline *rl);
+void	rl_do_backspace(t_readline *rl);
+void	rl_get_specials(t_readline *rl);
+void	rl_come_back(t_readline *rl);
+void	rl_addchar(t_readline *rl);
+void	rl_cleard(t_readline *rl);
 
 #endif
