@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/12/24 21:36:20 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/25 23:34:50 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/29 01:10:01 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -14,14 +14,16 @@
 
 char	**ft_tabrem_n(char **old, int n)
 {
+	int		end;
 	int		i;
 	char	**new;
 
 	if (!old || n < 0)
 		return (NULL);
-	if (!old[0])
+	end = ft_tablen(old);
+	if (!old[0] || n > end - 1)
 		return (old);
-	new = (char **)ft_calloc(ft_tablen(old), sizeof(char *));
+	new = (char **)ft_calloc(end, sizeof(char *));
 	if (!new)
 		return (NULL);
 	i = -1;

@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*									      */
 /*							  :::	   ::::::::   */
-/*   ft_free.c                                          :+:      :+:    :+:   */
+/*   ft_resetline.c                                     :+:      :+:    :+:   */
 /*						      +:+ +:+	      +:+     */
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
-/*   Created: 2023/12/26 01:22:23 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/29 05:23:02 by marcosv2         ###   ########.fr       */
+/*   Created: 2023/12/27 23:11:36 by marcosv2	       #+#    #+#	      */
+/*   Updated: 2023/12/29 05:55:34 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_free(void *any)
+void	ft_ansi_resetl(void)
 {
-	if (any)
-		free(any);
-	any = NULL;
-	return (any);
+	ft_printf("\33[2K\r");
 }

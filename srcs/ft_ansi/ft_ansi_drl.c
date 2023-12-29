@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*									      */
 /*							  :::	   ::::::::   */
-/*   ft_putfclear.c                                     :+:      :+:    :+:   */
+/*   ft_ansi_drl.c                                      :+:      :+:    :+:   */
 /*						      +:+ +:+	      +:+     */
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
-/*   Created: 2023/12/27 20:55:14 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/27 21:27:40 by marcosv2         ###   ########.fr       */
+/*   Created: 2023/12/29 05:57:57 by marcosv2	       #+#    #+#	      */
+/*   Updated: 2023/12/29 06:02:48 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putfclear(void)
+void	ft_ansi_drl(char *prompt)
 {
-	ft_putstr("\e[1;1H\e[2J\e[3J");
+	if (prompt)
+		ft_putstr(prompt);
+	ft_putstr("\033[0K");
 }

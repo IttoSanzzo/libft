@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/12/12 20:48:55 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/23 22:03:50 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/29 05:23:16 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -17,9 +17,11 @@ char	**ft_freetab(char **tab)
 	int	i;
 
 	i = -1;
+	if (!tab)
+		return (NULL);
 	while (tab[++i])
-		free(tab[i]);
+		ft_free(tab[i]);
 	if (tab)
-		free(tab);
+		ft_free(tab);
 	return (NULL);
 }

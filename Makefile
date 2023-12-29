@@ -6,7 +6,7 @@
 #    By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	       #
 #						  +#+#+#+#+#+	+#+	       #
 #    Created: 2023/11/26 19:20:16 by marcosv2	       #+#    #+#	       #
-#    Updated: 2023/12/28 00:23:50 by marcosv2         ###   ########.fr        #
+#    Updated: 2023/12/29 05:59:01 by marcosv2         ###   ########.fr        #
 #									       #
 # **************************************************************************** #
 
@@ -105,24 +105,39 @@ N_LST		= ft_lstadd_back_bonus.c	\
 		  ft_lstsize_bonus.c
 F_SRCS	+= $(addprefix $(D_SRCS)$(DS_LST), $(N_LST))
 
+DS_STRMAN	= ft_strman/
+N_STRMAN	= ft_stradd_bgn.c		\
+		  ft_stradd_end.c		\
+		  ft_stradd_n.c			\
+		  ft_strrem_bgn.c		\
+		  ft_strrem_end.c		\
+		  ft_strrem_n.c
+F_SRCS	+= $(addprefix $(D_SRCS)$(DS_STRMAN), $(N_STRMAN))
+
 DS_TAB		= ft_tab/
 N_TAB		= ft_freetab.c			\
 		  ft_tabcpy.c			\
 		  ft_tablen.c			\
-		  ft_tabadd_end.c		\
 		  ft_tabadd_bgn.c		\
+		  ft_tabadd_end.c		\
 		  ft_tabadd_n.c			\
-		  ft_tabrem_end.c		\
 		  ft_tabrem_bgn.c		\
+		  ft_tabrem_end.c		\
 		  ft_tabrem_n.c			\
 		  ft_tabsmove.c
 F_SRCS	+= $(addprefix $(D_SRCS)$(DS_TAB), $(N_TAB))
 
+DS_ANSI		= ft_ansi/
+N_ANSI		= ft_ansi_fclear.c		\
+		  ft_ansi_clear.c		\
+		  ft_ansi_resetl.c		\
+		  ft_ansi_drl.c
+F_SRCS	+= $(addprefix $(D_SRCS)$(DS_ANSI), $(N_ANSI))
+
 DS_UTILS	= ft_utils/
 N_UTILS		= ft_getarg_p.c			\
-		  ft_putfclear.c		\
-		  ft_putclear.c			\
-		  ft_resetline.c		\
+		  ft_getrstr_p.c		\
+		  ft_getstr_p.c			\
 		  ft_getchar.c
 F_SRCS	+= $(addprefix $(D_SRCS)$(DS_UTILS), $(N_UTILS))
 
@@ -145,7 +160,10 @@ N_GNL		= get_next_line.c
 F_SRCS	+= $(addprefix $(D_SRCS)$(DS_GNL), $(N_GNL))
 
 DS_READLINE	= ft_readline/
-N_READLINE	= ft_readline.c
+N_READLINE	= ft_sreadline.c		\
+		  ft_readline.c			\
+		  ft_rlhistory.c		\
+		  ft_rlconfig.c
 F_SRCS	+= $(addprefix $(D_SRCS)$(DS_READLINE), $(N_READLINE))
 
 # Objects Finalization
@@ -155,8 +173,10 @@ N_OBJS	= $(N_ISX:.c=.o)	\
 	  $(N_MEM:.c=.o)	\
 	  $(N_PUT:.c=.o)	\
 	  $(N_STR:.c=.o)	\
+	  $(N_STRMAN:.c=.o)	\
 	  $(N_LST:.c=.o)	\
 	  $(N_TAB:.c=.o)	\
+	  $(N_ANSI:.c=.o)	\
 	  $(N_UTILS:.c=.o)	\
 	  $(N_PRINTF:.c=.o)	\
 	  $(N_GNL:.c=.o)	\
