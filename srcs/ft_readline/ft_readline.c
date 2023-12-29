@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/12/28 22:55:48 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/29 08:17:15 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/29 09:51:51 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -181,12 +181,9 @@ static void	rl_get_specials(t_readline *rl)
 	}
 }
 
-static char	*rl_init(t_readline *rl, char *prompt)
+static char	*rl_init(t_readline *rl, char *prompt, int prt)
 {
-	static char	*str;
-
-	rl->str = str;
-	ft_free(rl->str);
+	rl->str = ft_free(rl->str);
 	rl->str = (char *)ft_calloc(1, sizeof(char));
 	if (!rl->str)
 		return (NULL);
@@ -199,6 +196,8 @@ static char	*rl_init(t_readline *rl, char *prompt)
 	rl->len = 0;
 	rl->ch = 0;
 	rl->prompt = prompt;
+	if (rl->prompt && prt)
+		ft_putstr(rl->prompt);
 	return (rl->str);
 }
 
@@ -218,24 +217,41 @@ static void	rl_cleard(t_readline *rl)
 	rl_come_back(rl);
 }
 
-void	rl_checkreset(t_readline *rl)
+int	rl_checkreset(t_readline *rl)
 {
+	static int	safety;
+	char	temp;
+
+	if (safety > 0)
+	{
+		safety--;
+		return (safety);
+	}
 	if (ft_rlconfig(2, GETV, 0))
-		rl_init(rl, rl->prompt);
+	{
+		rl_checkmove(rl);
+		temp = rl->ch;
+		rl_init(rl, rl->prompt, 0);
+		rl->ch = temp;
+		safety = 2;
+		return (1);
+	}
+	return (0);
 }
 
 char	*ft_readline(char *prompt)
 {
 	t_readline	rl;
 
-	if (!rl_init(&rl, prompt))
+	rl.str = NULL;
+	if (!rl_init(&rl, prompt, 1))
 		return (NULL);
-	if (rl.prompt)
-		ft_putstr(rl.prompt);
 	while (rl.ch != '\n')
 	{
-		rl.ch = ft_getchar();
-		rl_checkreset(&rl);
+		if (!rl_checkreset(&rl))
+			rl.ch = ft_getchar();
+		if (rl_checkreset(&rl))
+			continue ;
 		if (rl.len == 0 && rl.ch == 4)
 			return (ft_free(rl.str));
 		else if (rl.ch == '\033')
