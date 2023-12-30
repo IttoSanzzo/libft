@@ -6,7 +6,7 @@
 #    By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	       #
 #						  +#+#+#+#+#+	+#+	       #
 #    Created: 2023/11/26 19:20:16 by marcosv2	       #+#    #+#	       #
-#    Updated: 2023/12/29 16:43:20 by marcosv2         ###   ########.fr        #
+#    Updated: 2023/12/29 19:15:11 by marcosv2         ###   ########.fr        #
 #									       #
 # **************************************************************************** #
 
@@ -139,6 +139,7 @@ DS_UTILS	= ft_utils/
 N_UTILS		= ft_getarg_p.c			\
 		  ft_getrstr_p.c		\
 		  ft_getstr_p.c			\
+		  ft_ungetchar.c		\
 		  ft_getchar.c
 F_SRCS	+= $(addprefix $(D_SRCS)$(DS_UTILS), $(N_UTILS))
 

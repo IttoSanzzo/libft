@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/10/27 19:08:14 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/29 16:29:40 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/29 21:59:47 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <stdint.h>
 # include <signal.h>
 # include <termios.h>
+# include <sys/ioctl.h>
 
 //// Macros
 # ifndef BUFFER_SIZE
@@ -50,6 +51,7 @@
 # define C_GREEN "\033[38;5;40m"
 # define C_YELLOW "\033[38;5;226m"
 # define C_ORANGE "\033[38;5;208m"
+# define C_PURPLE "\033[38;5;93m"
 
 // Struct Define
 typedef struct s_list
@@ -166,6 +168,7 @@ int		ft_getrstr_p(char **tab, char const *name);
 int		ft_getstr_p(char **tab, char const *name);
 int		ft_getarg_p(char **tab, char const *name);
 int		ft_getchar(void);
+void	ft_ungetchar(char ch);
 
 //// ft_list
 t_list	*ft_lstnew(void *content);
@@ -201,7 +204,7 @@ int		rl_checkreset(t_readline *rl);
 int		ft_rlconfig(int id, size_t act, int val);
 char	**ft_rlhistory(char *new);
 char	*ft_sreadline(char *prompt);
-char	*rl_init(t_readline *rl, char *prompt, int prt);
+char	*rl_init(t_readline *rl, char *prompt);
 char	*rl_getprompt(char *prompt);
 char	*ft_readline(char *prompt);
 void	rl_go_right(t_readline *rl);
