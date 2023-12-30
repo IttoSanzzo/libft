@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/12/29 10:37:55 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/29 16:36:50 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/29 22:22:21 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@ void	rl_do_tab(t_readline *rl)
 {
 	(void)rl;
 	if (ft_rlconfig(1, GETV, 0))
-	{
-		ft_printf("\t");
-	}
+		return ;
 }
 
 void	rl_do_backspace(t_readline *rl)

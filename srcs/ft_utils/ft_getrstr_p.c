@@ -6,13 +6,13 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/12/25 14:40:36 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/29 07:48:51 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/29 22:40:51 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_getstr_p(char **tab, char const *name)
+int	ft_getrstr_p(char **tab, char const *name)
 {
 	int		nlen;
 	int		i;
