@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/12/29 10:35:22 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/29 11:40:16 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/29 18:04:08 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -24,11 +24,10 @@ void	rl_come_back(t_readline *rl)
 void	rl_addchar(t_readline *rl)
 {
 	rl->str = ft_stradd_n(rl->str, rl->ch, rl->pos);
-	ft_putchar(rl->ch);
-	ft_putstr((char *)(rl->str + rl->pos + 1));
-	rl->pos++;
 	rl->len++;
-	rl_come_back(rl);
+	ft_putstr((char *)(rl->str + rl->pos));
+	rl->pos += 2;
+	rl_go_left(rl);
 }
 
 void	rl_cleard(t_readline *rl)

@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/12/29 10:02:53 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/29 17:44:05 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/29 22:04:24 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -19,22 +19,27 @@ static char	*rl_wrap_up(t_readline *rl)
 	if (!ft_rlconfig(3, GETV, 0))
 		return (rl->str);
 	ft_rlconfig(3, PUTV, 0);
-	while (ft_open_quotes(rl->str, '"') || ft_open_quotes(rl->str, '"'))
+	ft_rlconfig(4, PUTV, 1);
+	while (ft_open_quotes(rl->str, '"') || ft_open_quotes(rl->str, '\''))
 	{
 		rl->str = ft_stradd_end(rl->str, '\n');
 		rl->str = ft_freejoin(rl->str, ft_readline("> "));
+		if (!rl->str)
+			break ;
 	}
+	ft_rlconfig(4, PUTV, 0);
 	ft_rlconfig(3, PUTV, 1);
+	if (ft_rlconfig(2, GETV, 0))
+		return (ft_readline(rl->prompt));
 	return (rl->str);
 }
 
-char	*rl_init(t_readline *rl, char *prompt, int prt)
+char	*rl_init(t_readline *rl, char *prompt)
 {
 	rl->str = ft_free(rl->str);
 	rl->str = (char *)ft_calloc(1, sizeof(char));
 	if (!rl->str)
 		return (NULL);
-	ft_rlconfig(2, PUTV, 0);
 	rl->move = 0;
 	rl->his = ft_rlhistory(NULL);
 	rl->hlen = ft_rlconfig(0, GETV, 0);
@@ -43,8 +48,9 @@ char	*rl_init(t_readline *rl, char *prompt, int prt)
 	rl->len = 0;
 	rl->ch = 0;
 	rl->prompt = prompt;
-	if (rl->prompt && prt)
+	if (rl->prompt && !ft_rlconfig(2, GETV, 0))
 		ft_putstr(rl->prompt);
+	ft_rlconfig(2, PUTV, 0);
 	ft_putstr("\033[s");
 	return (rl->str);
 }
@@ -70,13 +76,15 @@ char	*ft_readline(char *prompt)
 	t_readline	rl;
 
 	rl.str = NULL;
-	if (!rl_init(&rl, prompt, 1))
+	if (!rl_init(&rl, prompt))
 		return (NULL);
 	while (rl.ch != '\n')
 	{
 		if (!rl_checkreset(&rl))
 			rl.ch = ft_getchar();
-		if (rl_checkreset(&rl))
+		if (rl_checkreset(&rl) == 2)
+			return (NULL);
+		else if (rl_checkreset(&rl) == 1)
 			continue ;
 		if (rl.len == 0 && rl.ch == 4)
 			return (ft_free(rl.str));

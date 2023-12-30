@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/12/29 10:18:32 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/29 16:42:53 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/29 18:53:55 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static void	rl_do_arrow_up(t_readline *rl)
 {
 	if (rl->his && rl->hpos > 0)
 	{
-		rl_do_home(rl);
+		ft_putstr("\033[u");
 		ft_ansi_drd(NULL);
 		rl->hpos--;
 		ft_putstr(rl->his[rl->hpos]);
@@ -45,7 +45,7 @@ static void	rl_do_arrow_down(t_readline *rl)
 {
 	if (rl->his && rl->hpos < rl->hlen)
 	{
-		rl_do_home(rl);
+		ft_putstr("\033[u");
 		ft_ansi_drd(NULL);
 		rl->hpos++;
 		if (rl->hpos == rl->hlen)
