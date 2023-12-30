@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/10/27 19:08:14 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/29 21:59:47 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/30 00:04:43 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ typedef struct s_readline
 ////// SOURCE FILES
 //// ft_isx
 int		ft_open_quotes(char *s, char c);
+int		ft_cquotes(char *s);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);

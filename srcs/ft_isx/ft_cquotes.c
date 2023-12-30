@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*									      */
 /*							  :::	   ::::::::   */
-/*   ft_open_quotes.c                                   :+:      :+:    :+:   */
+/*   ft_cquotes.c                                       :+:      :+:    :+:   */
 /*						      +:+ +:+	      +:+     */
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/12/18 16:42:19 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/29 23:52:18 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/30 00:29:54 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_quotes(char *s, char c)
+int	ft_cquotes(char *s)
 {
-	int	count;
-	int	i;
+	int		closed;
+	int		i;
+	char	c;
 
-	count = 0;
+	if (!s)
+		return (0);
+	closed = 1;
 	i = -1;
 	while (s[++i])
 	{
@@ -26,15 +29,13 @@ static int	count_quotes(char *s, char c)
 			i++;
 			continue ;
 		}
-		if (s[i] == c)
-			count++;
+		if (closed && (s[i] == '\"' || s[i] == '\''))
+		{
+			closed--;
+			c = (char)s[i];
+		}
+		else if (!closed && s[i] == c)
+			closed++;
 	}
-	return (count % 2);
-}
-
-int	ft_open_quotes(char *s, char c)
-{
-	if (!s || !count_quotes(s, c))
-		return (0);
-	return (1);
+	return (closed);
 }
