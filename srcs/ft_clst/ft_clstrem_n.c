@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/12/24 21:36:20 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/30 21:18:53 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/31 00:53:17 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ t_clist	*ft_clstrem_n(t_clist **lst, int n)
 	while (temp->next && ++i < n)
 		temp = temp->next;
 	ft_clstrem_bgn(&temp->next);
-	return (temp->next);
+	return (*lst);
 }

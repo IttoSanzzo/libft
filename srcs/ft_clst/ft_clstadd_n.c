@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/12/24 21:36:20 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/30 20:21:26 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/31 00:53:05 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ t_clist	*ft_clstadd_n(t_clist **lst, t_clist *new, int n)
 	if (temp->next)
 		new->next = temp->next;
 	temp->next = new;
-	return (new);
+	return (*lst);
 }
