@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/10/27 19:08:14 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/31 00:51:39 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/31 01:29:27 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -124,6 +124,7 @@ void	ft_putchar(int c);
 void	ft_putstr(char *s);
 void	ft_putnbr(int nb);
 void	ft_puttab(char **tab, char *prompt);
+void	ft_putclstval(t_clist *lst);
 void	ft_putclst(t_clist *lst);
 
 //// ft_str
@@ -204,6 +205,8 @@ t_clist	*ft_clstadd_n(t_clist **lst, t_clist *new, int n);
 t_clist	*ft_clstrem_bgn(t_clist **lst);
 t_clist	*ft_clstrem_end(t_clist **lst);
 t_clist	*ft_clstrem_n(t_clist **lst, int n);
+t_clist	*ft_clstpos(t_clist *lst, int pos);
+char	ft_clstnval(t_clist *lst, int pos);
 void	ft_clstfree(t_clist **lst);
 int		ft_clstlen(t_clist *lst);
 

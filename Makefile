@@ -6,7 +6,7 @@
 #    By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	       #
 #						  +#+#+#+#+#+	+#+	       #
 #    Created: 2023/11/26 19:20:16 by marcosv2	       #+#    #+#	       #
-#    Updated: 2023/12/30 23:49:02 by marcosv2         ###   ########.fr        #
+#    Updated: 2023/12/31 01:29:59 by marcosv2         ###   ########.fr        #
 #									       #
 # **************************************************************************** #
 
@@ -72,6 +72,7 @@ N_PUT		= ft_putchar_fd.c		\
 		  ft_putstr.c			\
 		  ft_putnbr.c			\
 		  ft_puttab.c			\
+		  ft_putclstval.c		\
 		  ft_putclst.c
 F_SRCS	+= $(addprefix $(D_SRCS)$(DS_PUT), $(N_PUT))
 
@@ -115,8 +116,10 @@ F_SRCS	+= $(addprefix $(D_SRCS)$(DS_LST), $(N_LST))
 
 DS_CLST		= ft_clst/
 N_CLST		= ft_clstnew.c			\
-		  ft_clstlen.c			\
 		  ft_clstfree.c			\
+		  ft_clstlen.c			\
+		  ft_clstpos.c			\
+		  ft_clstnval.c			\
 		  ft_clstadd_bgn.c		\
 		  ft_clstadd_end.c		\
 		  ft_clstadd_n.c		\
