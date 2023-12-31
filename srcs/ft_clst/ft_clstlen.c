@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*									      */
 /*							  :::	   ::::::::   */
-/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
+/*   ft_clstlen.c                                       :+:      :+:    :+:   */
 /*						      +:+ +:+	      +:+     */
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
-/*   Created: 2023/10/27 19:33:52 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/10/27 19:34:02 by marcosv2         ###   ########.fr       */
+/*   Created: 2023/10/27 19:38:13 by marcosv2	       #+#    #+#	      */
+/*   Updated: 2023/12/30 23:44:24 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+int	ft_clstlen(t_clist *lst)
 {
-	if (!*lst)
+	t_clist	*last;
+	int		i;
+
+	last = lst;
+	i = 0;
+	while (last)
 	{
-		*lst = new;
-		return ;
+		last = last->next;
+		i++;
 	}
-	if (new)
-	{
-		new->next = *lst;
-		*lst = new;
-	}
+	return (i);
 }

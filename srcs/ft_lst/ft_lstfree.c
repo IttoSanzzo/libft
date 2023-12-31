@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*									      */
 /*							  :::	   ::::::::   */
-/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
+/*   ft_lstfree.c                                       :+:      :+:    :+:   */
 /*						      +:+ +:+	      +:+     */
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
-/*   Created: 2023/10/27 19:35:06 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/10/27 19:35:16 by marcosv2         ###   ########.fr       */
+/*   Created: 2023/10/27 19:34:24 by marcosv2	       #+#    #+#	      */
+/*   Updated: 2023/12/31 00:49:56 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void*))
+void	ft_lstfree(t_list **lst, void (*del)(void*))
 {
+	t_list	*temp;
+
 	if (lst && del)
 	{
-		del(lst->content);
-		free(lst);
+		while (*lst)
+		{
+			temp = (*lst)->next;
+			del((*lst)->val);
+			free(*lst);
+			*lst = temp;
+		}
 	}
+	lst = NULL;
 }

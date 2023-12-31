@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*									      */
 /*							  :::	   ::::::::   */
-/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*						      +:+ +:+	      +:+     */
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/10/27 19:37:10 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/10/27 19:37:13 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/30 15:31:35 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 
 	if (lst && f && del)
 	{
-		new_list = ft_lstnew(f(lst->content));
+		new_list = ft_lstnew(f(lst->val));
 		lst = lst->next;
 		lastnew_el = new_list;
 		while (lst && new_list)
 		{
-			lastnew_el->next = ft_lstnew(f(lst->content));
+			lastnew_el->next = ft_lstnew(f(lst->val));
 			if (!lastnew_el->next)
-				ft_lstclear(&new_list, del);
+				ft_lstfree(&new_list, del);
 			else
 			{
 				lastnew_el = lastnew_el->next;

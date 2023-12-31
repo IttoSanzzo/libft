@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*									      */
 /*							  :::	   ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_nfree_str.c                                     :+:      :+:    :+:   */
 /*						      +:+ +:+	      +:+     */
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
-/*   Created: 2023/12/08 09:14:09 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/30 21:48:30 by marcosv2         ###   ########.fr       */
+/*   Created: 2023/12/30 20:36:47 by marcosv2	       #+#    #+#	      */
+/*   Updated: 2023/12/30 21:44:04 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char *s)
+char	*ft_nfree_str(char **mem)
 {
-	if (!s)
-		return ;
-	while (*s)
-		write(1, &*s++, 1);
+	if (*mem)
+	{
+		free(*mem);
+		*mem = NULL;
+	}
+	return (NULL);
 }

@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*									      */
 /*							  :::	   ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_clstnew.c                                       :+:      :+:    :+:   */
 /*						      +:+ +:+	      +:+     */
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/10/27 19:37:34 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/10/27 20:14:23 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/30 16:08:32 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+t_clist	*ft_clstnew(char val)
 {
-	t_list	*newlst;
+	t_clist	*newlst;
 
-	newlst = (t_list *)malloc(sizeof(t_list));
+	newlst = (t_clist *)malloc(sizeof(t_clist));
 	if (!newlst)
 		return (NULL);
-	newlst->content = content;
+	newlst->val = val;
 	newlst->next = NULL;
 	return (newlst);
 }

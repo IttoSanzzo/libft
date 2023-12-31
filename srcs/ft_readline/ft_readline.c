@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/12/29 10:02:53 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/30 00:16:37 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/30 23:00:15 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static char	*rl_wrap_up(t_readline *rl)
 	ft_rlconfig(4, PUTV, 1);
 	while (!ft_cquotes(rl->str))
 	{
-		rl->str = ft_stradd_end(rl->str, '\n');
+		ft_stradd_end(&rl->str, '\n');
 		rl->str = ft_freejoin(rl->str, ft_readline("> "));
 		if (!rl->str)
 			break ;

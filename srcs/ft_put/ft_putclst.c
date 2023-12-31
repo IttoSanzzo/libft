@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*									      */
 /*							  :::	   ::::::::   */
-/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_putclst.c                                       :+:      :+:    :+:   */
 /*						      +:+ +:+	      +:+     */
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
-/*   Created: 2023/10/27 19:35:34 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/10/27 19:35:45 by marcosv2         ###   ########.fr       */
+/*   Created: 2023/12/30 16:11:01 by marcosv2	       #+#    #+#	      */
+/*   Updated: 2023/12/30 16:15:01 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_putclst(t_clist *lst)
 {
-	while (lst && f)
+	while (lst)
 	{
-		f(lst->content);
+		ft_putchar(lst->val);
 		lst = lst->next;
 	}
 }

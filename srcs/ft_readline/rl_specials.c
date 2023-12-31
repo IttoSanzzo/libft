@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/12/29 10:37:55 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/29 22:22:21 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/30 23:00:51 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	rl_do_backspace(t_readline *rl)
 {
 	if (rl->pos > 0)
 	{
-		rl->str = ft_strrem_n(rl->str, rl->pos - 1);
+		ft_strrem_n(&rl->str, rl->pos - 1);
 		rl->len--;
 		ft_ansi_drd("\033[u");
 		ft_putstr((char *)(rl->str));
@@ -45,7 +45,7 @@ static void	rl_do_delete(t_readline *rl)
 {
 	if (rl->pos < rl->len)
 	{
-		rl->str = ft_strrem_n(rl->str, rl->pos);
+		ft_strrem_n(&rl->str, rl->pos);
 		rl->len--;
 		ft_ansi_drd(NULL);
 		ft_putstr((char *)(rl->str + rl->pos++));

@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*									      */
 /*							  :::	   ::::::::   */
-/*   ft_stradd_bgn.c                                    :+:      :+:    :+:   */
+/*   ft_clstadd_n.c                                     :+:      :+:    :+:   */
 /*						      +:+ +:+	      +:+     */
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/12/24 21:36:20 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/30 22:57:45 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/30 20:21:26 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_stradd_bgn(char **old, char add)
+t_clist	*ft_clstadd_n(t_clist **lst, t_clist *new, int n)
 {
 	int		i;
-	char	*new;
+	t_clist	*temp;
 
-	if (!*old)
-		return (ft_strnew(old, add));
-	new = (char *)ft_calloc(ft_strlen(*old) + 2, sizeof(char));
-	if (!new)
+	if (!new || n < 0)
 		return (NULL);
+	if (!*lst || n == 0)
+		return (ft_clstadd_bgn(lst, new));
 	i = 0;
-	new[i] = (char)(add);
-	while (old[0][++i - 1])
-		new[i] = (char)old[0][i - 1];
-	free(*old);
-	*old = new;
+	temp = *lst;
+	while (temp->next && ++i < n)
+		temp = temp->next;
+	if (temp->next)
+		new->next = temp->next;
+	temp->next = new;
 	return (new);
 }
