@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*									      */
 /*							  :::	   ::::::::   */
-/*   ft_putfclear.c                                     :+:      :+:    :+:   */
+/*   ft_putclstpos.c                                    :+:      :+:    :+:   */
 /*						      +:+ +:+	      +:+     */
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
-/*   Created: 2023/12/27 20:55:14 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/29 05:55:03 by marcosv2         ###   ########.fr       */
+/*   Created: 2023/12/30 16:11:01 by marcosv2	       #+#    #+#	      */
+/*   Updated: 2023/12/31 03:09:36 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_ansi_fclear(void)
+void	ft_putclstpos(t_clist *lst, int pos)
 {
-	ft_putstr("\e[1;1H\e[2J\e[3J");
+	while (lst && pos--)
+		lst = lst->next;
+	if (pos + 1)
+		return ;
+	ft_putclst(lst);
 }

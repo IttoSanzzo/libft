@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/12/29 10:14:37 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/29 22:04:59 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/31 07:09:03 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ int	rl_checkmove(t_readline *rl)
 {
 	if (rl->move)
 	{
-		ft_free(rl->str);
-		rl->str = ft_strdup(rl->his[rl->hpos]);
+		ft_freeclst(&rl->line);
+		rl->line = ft_stocl(rl->his[rl->hpos]);
 		rl->hpos = rl->hlen;
 		rl->move = 0;
 	}
@@ -39,7 +39,7 @@ int	rl_checkreset(t_readline *rl)
 		ft_ungetchar(rl->ch);
 		if (ft_rlconfig(4, GETV, 0))
 		{
-			rl->str = (char *)ft_free(rl->str);
+			ft_freeclst(&rl->line);
 			return (2);
 		}
 		rl_init(rl, rl->prompt);

@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/12/29 10:02:53 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/30 23:00:15 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/31 16:32:13 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -14,32 +14,56 @@
 
 static char	*rl_wrap_up(t_readline *rl)
 {
+	char	*str;
+
 	rl_checkmove(rl);
+	str = ft_cltos(rl->line);
+	ft_freeclst(&rl->line);
 	ft_putchar('\n');
 	if (!ft_rlconfig(3, GETV, 0))
-		return (rl->str);
+		return (str);
 	ft_rlconfig(3, PUTV, 0);
 	ft_rlconfig(4, PUTV, 1);
-	while (!ft_cquotes(rl->str))
+	while (!ft_cquotes(str))
 	{
-		ft_stradd_end(&rl->str, '\n');
-		rl->str = ft_freejoin(rl->str, ft_readline("> "));
-		if (!rl->str)
+		ft_stradd_end(&str, '\n');
+		str = ft_freejoin(str, ft_readline("> "));
+		if (str)
 			break ;
 	}
 	ft_rlconfig(4, PUTV, 0);
 	ft_rlconfig(3, PUTV, 1);
 	if (ft_rlconfig(2, GETV, 0))
 		return (ft_readline(rl->prompt));
-	return (rl->str);
+	return (str);
 }
 
-char	*rl_init(t_readline *rl, char *prompt)
+char	ft_buffer_read(t_readline *rl)
 {
-	rl->str = ft_free(rl->str);
-	rl->str = (char *)ft_calloc(1, sizeof(char));
-	if (!rl->str)
-		return (NULL);
+	int		i;
+	char	c;
+
+	i = 0;
+	c = 0;
+	if (rl->buffer)
+		return (rl_bufferuse(rl));
+	rl->ch = ft_getchar();
+	c = ft_getchar_unb(0);
+	if (c == '\0')
+		return (rl->ch);
+	ft_clstadd_end(&rl->buffer, ft_clstnew(rl->ch));
+	while (c != '\0')
+	{
+		ft_clstadd_end(&rl->buffer, ft_clstnew(c));
+		c = ft_getchar_unb((i++ > 5));
+	}
+	return (rl_bufferuse(rl));
+}
+
+void	rl_init(t_readline *rl, char *prompt)
+{
+	ft_freeclst(&rl->line);
+	rl->buffer = NULL;
 	rl->move = 0;
 	rl->his = ft_rlhistory(NULL);
 	rl->hlen = ft_rlconfig(0, GETV, 0);
@@ -51,8 +75,8 @@ char	*rl_init(t_readline *rl, char *prompt)
 	if (rl->prompt && !ft_rlconfig(2, GETV, 0))
 		ft_putstr(rl->prompt);
 	ft_rlconfig(2, PUTV, 0);
-	ft_putstr("\033[s");
-	return (rl->str);
+	rl_save_home(rl);
+	ft_ansi_sc();
 }
 
 static void	rl_others(t_readline *rl)
@@ -75,19 +99,18 @@ char	*ft_readline(char *prompt)
 {
 	t_readline	rl;
 
-	rl.str = NULL;
-	if (!rl_init(&rl, prompt))
-		return (NULL);
+	rl.line = NULL;
+	rl_init(&rl, prompt);
 	while (rl.ch != '\n')
 	{
 		if (!rl_checkreset(&rl))
-			rl.ch = ft_getchar();
+			rl.ch = ft_buffer_read(&rl);
 		if (rl_checkreset(&rl) == 2)
 			return (NULL);
 		else if (rl_checkreset(&rl) == 1)
 			continue ;
 		if (rl.len == 0 && rl.ch == 4)
-			return (ft_free(rl.str));
+			return ((char *)ft_freeclst(&rl.line));
 		else
 			rl_others(&rl);
 	}

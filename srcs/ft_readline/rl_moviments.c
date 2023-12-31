@@ -6,35 +6,39 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/12/29 10:18:32 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/29 18:53:55 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/31 07:07:04 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	rl_do_home(t_readline *rl)
+void	rl_go_home(t_readline *rl)
 {
 	if (rl->pos > 0)
 	{
-		ft_putstr("\033[u");
+		ft_ansi_go(rl->home[0], rl->home[1]);
 		rl->pos = 0;
 	}
 }
 
-static void	rl_do_end(t_readline *rl)
+static void	rl_go_end(t_readline *rl)
 {
-	while (rl->pos < rl->len)
-		rl_go_right(rl);
+	if (rl->pos < rl->len)
+	{
+		ft_ansi_go(rl->end[0], rl->end[1]);
+		rl->pos = rl->len;
+	}
 }
 
 static void	rl_do_arrow_up(t_readline *rl)
 {
 	if (rl->his && rl->hpos > 0)
 	{
-		ft_putstr("\033[u");
+		rl_go_home(rl);
 		ft_ansi_drd(NULL);
 		rl->hpos--;
 		ft_putstr(rl->his[rl->hpos]);
+		rl_save_end(rl);
 		rl->len = ft_strlen(rl->his[rl->hpos]);
 		rl->pos = rl->len;
 		rl->move = 1;
@@ -45,19 +49,21 @@ static void	rl_do_arrow_down(t_readline *rl)
 {
 	if (rl->his && rl->hpos < rl->hlen)
 	{
-		ft_putstr("\033[u");
+		rl_go_home(rl);
 		ft_ansi_drd(NULL);
 		rl->hpos++;
 		if (rl->hpos == rl->hlen)
 		{
-			ft_putstr(rl->str);
-			rl->len = ft_strlen(rl->str);
+			ft_putclst(rl->line);
+			rl_save_end(rl);
+			rl->len = ft_clstlen(rl->line);
 			rl->pos = rl->len;
 			rl->move = 0;
 		}
 		else
 		{
 			ft_putstr(rl->his[rl->hpos]);
+			rl_save_end(rl);
 			rl->len = ft_strlen(rl->his[rl->hpos]);
 			rl->pos = rl->len;
 			rl->move = 1;
@@ -76,7 +82,7 @@ void	rl_do_moviments(t_readline *rl)
 	else if ((rl->ch == 'C') && (rl->pos < rl->len))
 		rl_go_right(rl);
 	else if (rl->ch == 'H')
-		rl_do_home(rl);
+		rl_go_home(rl);
 	else if (rl->ch == 'F')
-		rl_do_end(rl);
+		rl_go_end(rl);
 }

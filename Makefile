@@ -6,7 +6,7 @@
 #    By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	       #
 #						  +#+#+#+#+#+	+#+	       #
 #    Created: 2023/11/26 19:20:16 by marcosv2	       #+#    #+#	       #
-#    Updated: 2023/12/31 01:29:59 by marcosv2         ###   ########.fr        #
+#    Updated: 2023/12/31 15:11:26 by marcosv2         ###   ########.fr        #
 #									       #
 # **************************************************************************** #
 
@@ -73,6 +73,8 @@ N_PUT		= ft_putchar_fd.c		\
 		  ft_putnbr.c			\
 		  ft_puttab.c			\
 		  ft_putclstval.c		\
+		  ft_putclstpos.c		\
+		  ft_putnclst.c			\
 		  ft_putclst.c
 F_SRCS	+= $(addprefix $(D_SRCS)$(DS_PUT), $(N_PUT))
 
@@ -116,7 +118,7 @@ F_SRCS	+= $(addprefix $(D_SRCS)$(DS_LST), $(N_LST))
 
 DS_CLST		= ft_clst/
 N_CLST		= ft_clstnew.c			\
-		  ft_clstfree.c			\
+		  ft_freeclst.c			\
 		  ft_clstlen.c			\
 		  ft_clstpos.c			\
 		  ft_clstnval.c			\
@@ -152,19 +154,27 @@ N_TAB		= ft_freetab.c			\
 F_SRCS	+= $(addprefix $(D_SRCS)$(DS_TAB), $(N_TAB))
 
 DS_ANSI		= ft_ansi/
-N_ANSI		= ft_ansi_fclear.c		\
+N_ANSI		= ft_ansi_sc.c			\
+		  ft_ansi_lc.c			\
 		  ft_ansi_clear.c		\
 		  ft_ansi_resetl.c		\
+		  ft_ansi_dfd.c			\
 		  ft_ansi_drl.c			\
-		  ft_ansi_drd.c
+		  ft_ansi_drd.c			\
+		  ft_ansi_getcp.c		\
+		  ft_ansi_go.c
 F_SRCS	+= $(addprefix $(D_SRCS)$(DS_ANSI), $(N_ANSI))
 
 DS_UTILS	= ft_utils/
-N_UTILS		= ft_getarg_p.c			\
+N_UTILS		= ft_stdout_off.c		\
+		  ft_stdout_on.c		\
+		  ft_getarg_p.c			\
 		  ft_getrstr_p.c		\
 		  ft_getstr_p.c			\
 		  ft_ungetchar.c		\
-		  ft_getchar.c
+		  ft_getchar_unb.c		\
+		  ft_getchar.c			\
+		  ft_newfile.c
 F_SRCS	+= $(addprefix $(D_SRCS)$(DS_UTILS), $(N_UTILS))
 
 DS_PRINTF	= ft_printf/
@@ -191,6 +201,7 @@ N_READLINE	= ft_sreadline.c		\
 		  ft_rlconfig.c			\
 		  ft_rlhistory.c		\
 		  rl_checks.c			\
+		  rl_save_cp.c			\
 		  rl_moviments.c		\
 		  rl_go.c			\
 		  rl_specials.c			\

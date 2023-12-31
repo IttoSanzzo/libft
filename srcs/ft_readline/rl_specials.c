@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/12/29 10:37:55 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/30 23:00:51 by marcosv2         ###   ########.fr       */
+/*   Updated: 2023/12/31 16:10:48 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -23,11 +23,13 @@ void	rl_do_backspace(t_readline *rl)
 {
 	if (rl->pos > 0)
 	{
-		ft_strrem_n(&rl->str, rl->pos - 1);
+		ft_clstrem_n(&rl->line, rl->pos - 1);
 		rl->len--;
-		ft_ansi_drd("\033[u");
-		ft_putstr((char *)(rl->str));
 		rl_go_left(rl);
+		ft_ansi_drd(NULL);
+		ft_putclstpos(rl->line, rl->pos);
+		rl_save_end(rl);
+		rl_get_back(rl);
 	}
 }
 
@@ -45,26 +47,27 @@ static void	rl_do_delete(t_readline *rl)
 {
 	if (rl->pos < rl->len)
 	{
-		ft_strrem_n(&rl->str, rl->pos);
+		ft_clstrem_n(&rl->line, rl->pos);
 		rl->len--;
 		ft_ansi_drd(NULL);
-		ft_putstr((char *)(rl->str + rl->pos++));
-		rl_go_left(rl);
+		ft_putclstpos(rl->line, rl->pos);
+		rl_save_end(rl);
+		rl_get_back(rl);
 	}
 }
 
 void	rl_get_specials(t_readline *rl)
 {
-	if ('[' == (char)ft_getchar())
+	if ('[' == rl_bufferuse(rl))
 	{
-		rl->ch = ft_getchar();
+		rl->ch = rl_bufferuse(rl);
 		if (rl->ch == 'A' || rl->ch == 'B' || rl->ch == 'C' || rl->ch == 'D'
 			|| rl->ch == 'H' || rl->ch == 'F')
 			rl_do_moviments(rl);
 		else if (rl_checkmove(rl) && (rl->ch == '2')
-			&& ((char)ft_getchar() == '~'))
+			&& rl_bufferuse(rl) == '~')
 			rl_do_insert(rl);
-		else if ((rl->ch == '3') && ((char)ft_getchar() == '~'))
+		else if ((rl->ch == '3') && (rl_bufferuse(rl) == '~'))
 			rl_do_delete(rl);
 	}
 }
