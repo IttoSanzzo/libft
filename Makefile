@@ -6,7 +6,7 @@
 #    By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	       #
 #						  +#+#+#+#+#+	+#+	       #
 #    Created: 2023/11/26 19:20:16 by marcosv2	       #+#    #+#	       #
-#    Updated: 2023/12/31 15:11:26 by marcosv2         ###   ########.fr        #
+#    Updated: 2024/01/04 03:02:13 by marcosv2         ###   ########.fr        #
 #									       #
 # **************************************************************************** #
 
@@ -28,6 +28,8 @@ D_OBJS	= objs/
 
 DS_ISX		= ft_isx/
 N_ISX		= ft_isalnum.c			\
+		  ft_isupp.c			\
+		  ft_islow.c			\
 		  ft_isalpha.c			\
 		  ft_isascii.c			\
 		  ft_isdigit.c			\
@@ -75,7 +77,8 @@ N_PUT		= ft_putchar_fd.c		\
 		  ft_putclstval.c		\
 		  ft_putclstpos.c		\
 		  ft_putnclst.c			\
-		  ft_putclst.c
+		  ft_putclst.c			\
+		  ft_putclst_xfory.c
 F_SRCS	+= $(addprefix $(D_SRCS)$(DS_PUT), $(N_PUT))
 
 DS_STR		= ft_str/
@@ -205,6 +208,7 @@ N_READLINE	= ft_sreadline.c		\
 		  rl_moviments.c		\
 		  rl_go.c			\
 		  rl_specials.c			\
+		  rl_addchar.c			\
 		  rl_utils.c
 F_SRCS	+= $(addprefix $(D_SRCS)$(DS_READLINE), $(N_READLINE))
 

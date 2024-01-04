@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/12/29 10:18:32 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/31 07:07:04 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/03 05:46:33 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	rl_go_home(t_readline *rl)
 	}
 }
 
-static void	rl_go_end(t_readline *rl)
+void	rl_go_end(t_readline *rl)
 {
 	if (rl->pos < rl->len)
 	{

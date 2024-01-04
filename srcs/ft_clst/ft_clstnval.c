@@ -6,12 +6,13 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/12/31 00:54:17 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/31 01:31:03 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/03 05:06:02 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+//returns the char stored in the "pos" position os a clist.
 char	ft_clstnval(t_clist *lst, int pos)
 {
 	t_clist	*temp;

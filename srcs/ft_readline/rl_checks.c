@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/12/29 10:14:37 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/31 07:09:03 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/03 04:09:59 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int	rl_checkreset(t_readline *rl)
 	{
 		rl_checkmove(rl);
 		ft_ungetchar(rl->ch);
+		ft_freeclst(&rl->buffer);
 		if (ft_rlconfig(4, GETV, 0))
 		{
 			ft_freeclst(&rl->line);

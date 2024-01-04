@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/10/27 19:08:14 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/31 16:21:03 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/03 05:46:49 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -78,6 +78,8 @@ typedef struct s_readline
 	int				move;
 	int				hlen;
 	int				hpos;
+	int				spos;
+	int				vpos;
 	int				pos;
 	int				len;
 	char			**his;
@@ -91,6 +93,8 @@ typedef struct s_readline
 //// ft_isx
 int		ft_open_quotes(char *s, char c);
 int		ft_cquotes(char *s);
+int		ft_isupp(int c);
+int		ft_islow(int c);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -135,6 +139,7 @@ void	ft_putclstval(t_clist *lst);
 void	ft_putclst(t_clist *lst);
 void	ft_putnclst(t_clist *lst, int n);
 void	ft_putclstpos(t_clist *lst, int pos);
+void	ft_putclst_xfory(t_clist *lst, int x, int y);
 
 //// ft_str
 size_t	ft_strlen(const char *str);
@@ -253,13 +258,16 @@ char	rl_bufferuse(t_readline *rl);
 char	**ft_rlhistory(char *new);
 char	*ft_sreadline(char *prompt);
 char	*ft_readline(char *prompt);
+void	rl_termios_ch(int opt);
 void	rl_init(t_readline *rl, char *prompt);
+void	rl_getcp(int *x, int *y, t_readline *rl);
 void	rl_go_right(t_readline *rl);
 void	rl_go_left(t_readline *rl);
 void	rl_save_home(t_readline *rl);
 void	rl_save_end(t_readline *rl);
 void	rl_do_moviments(t_readline *rl);
 void	rl_go_home(t_readline *rl);
+void	rl_go_end(t_readline *rl);
 void	rl_do_tab(t_readline *rl);
 void	rl_do_backspace(t_readline *rl);
 void	rl_get_specials(t_readline *rl);

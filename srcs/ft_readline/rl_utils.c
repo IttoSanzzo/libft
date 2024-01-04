@@ -6,24 +6,11 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/12/29 10:35:22 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/31 15:50:03 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/04 03:01:45 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-void	rl_addchar(t_readline *rl)
-{
-	int	save[2];
-
-	ft_clstadd_n(&rl->line, ft_clstnew(rl->ch), rl->pos);
-	rl->len++;
-	ft_ansi_getcp(&save[0], &save[1]);
-	ft_putclstpos(rl->line, rl->pos);
-	rl_save_end(rl);
-	ft_ansi_go(save[0], save[1]);
-	rl_go_right(rl);
-}
 
 void	rl_get_back(t_readline *rl)
 {
@@ -62,4 +49,20 @@ char	rl_bufferuse(t_readline *rl)
 	rl->ch = rl->buffer->val;
 	ft_clstrem_bgn(&rl->buffer);
 	return (rl->ch);
+}
+
+void	rl_termios_ch(int opt)
+{
+	static struct termios	oldt;
+	struct termios			newt;
+
+	if (opt == 0)
+	{
+		tcgetattr(STDIN_FILENO, &oldt);
+		newt = oldt;
+		newt.c_lflag &= ~(ICANON | ECHO);
+		tcsetattr(STDIN_FILENO, TCSANOW, &newt);
+	}
+	if (opt == 1)
+		tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
 }
