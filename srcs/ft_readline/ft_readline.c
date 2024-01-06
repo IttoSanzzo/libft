@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/12/29 10:02:53 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2024/01/03 05:45:08 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/06 18:53:31 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ static char	*rl_wrap_up(t_readline *rl)
 	rl_termios_ch(1);
 	rl_go_end(rl);
 	ft_putchar('\n');
-	if (!ft_rlconfig(3, GETV, 0))
+	return (str);
+}
+/*	if (!ft_rlconfig(3, GETV, 0))
 		return (str);
 	ft_rlconfig(3, PUTV, 0);
 	ft_rlconfig(4, PUTV, 1);
@@ -38,7 +40,7 @@ static char	*rl_wrap_up(t_readline *rl)
 	if (ft_rlconfig(2, GETV, 0))
 		return (ft_readline(rl->prompt));
 	return (str);
-}
+}*/
 
 char	ft_buffer_read(t_readline *rl)
 {
