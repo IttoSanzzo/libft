@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/12/28 21:55:52 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2024/01/06 21:29:45 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/06 22:07:44 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ char	**ft_add_history(char *new)
 	{
 		history = (char **)ft_calloc(2, sizeof(char *));
 		history[0] = ft_strdup(new);
+		ft_rlconfig(0, PUTV, 1);
 	}
 	else
 	{
