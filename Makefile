@@ -6,7 +6,7 @@
 #    By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	       #
 #						  +#+#+#+#+#+	+#+	       #
 #    Created: 2023/11/26 19:20:16 by marcosv2	       #+#    #+#	       #
-#    Updated: 2024/01/04 03:02:13 by marcosv2         ###   ########.fr        #
+#    Updated: 2024/01/06 21:22:12 by marcosv2         ###   ########.fr        #
 #									       #
 # **************************************************************************** #
 
@@ -59,8 +59,9 @@ N_MEM		= ft_calloc.c			\
 		  ft_memset.c			\
 		  ft_free.c			\
 		  ft_nfree.c			\
-		  ft_nfree_str.c		\
-		  ft_nfree_clst.c		\
+		  ft_nfreestr.c			\
+		  ft_nfreetab.c			\
+		  ft_nfreeclst.c		\
 		  ft_gptr.c			\
 		  ft_gint.c
 F_SRCS	+= $(addprefix $(D_SRCS)$(DS_MEM), $(N_MEM))
@@ -145,7 +146,7 @@ F_SRCS	+= $(addprefix $(D_SRCS)$(DS_STRMAN), $(N_STRMAN))
 
 DS_TAB		= ft_tab/
 N_TAB		= ft_freetab.c			\
-		  ft_tabcpy.c			\
+		  ft_tabdup.c			\
 		  ft_tablen.c			\
 		  ft_tabadd_bgn.c		\
 		  ft_tabadd_end.c		\
@@ -202,7 +203,8 @@ DS_READLINE	= ft_readline/
 N_READLINE	= ft_sreadline.c		\
 		  ft_readline.c			\
 		  ft_rlconfig.c			\
-		  ft_rlhistory.c		\
+		  ft_add_history.c		\
+		  ft_rl_clear_history.c		\
 		  rl_checks.c			\
 		  rl_save_cp.c			\
 		  rl_moviments.c		\

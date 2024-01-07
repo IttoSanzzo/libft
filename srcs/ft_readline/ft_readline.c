@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/12/29 10:02:53 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2024/01/06 18:53:31 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/06 21:29:05 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	rl_init(t_readline *rl, char *prompt)
 	ft_freeclst(&rl->line);
 	rl->buffer = NULL;
 	rl->move = 0;
-	rl->his = ft_rlhistory(NULL);
+	rl->his = ft_add_history(NULL);
 	rl->hlen = ft_rlconfig(0, GETV, 0);
 	rl->hpos = rl->hlen;
 	rl->spos = -1;

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*									      */
 /*							  :::	   ::::::::   */
-/*   ft_rlhistory.c                                     :+:      :+:    :+:   */
+/*   ft_add_history.c                                   :+:      :+:    :+:   */
 /*						      +:+ +:+	      +:+     */
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/12/28 21:55:52 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/29 22:38:42 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/06 21:29:45 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_rlhistory(char *new)
+char	**ft_add_history(char *new)
 {
 	int			len;
 	int			i;
@@ -33,7 +33,7 @@ char	**ft_rlhistory(char *new)
 			ft_tabsmove(history, i, len - 1);
 		else
 		{
-			history = ft_tabadd_end(history, ft_strdup(new));
+			history = ft_tabadd_end(&history, ft_strdup(new));
 			ft_rlconfig(0, PUTV, len + 1);
 		}
 	}

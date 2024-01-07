@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*									      */
 /*							  :::	   ::::::::   */
-/*   ft_tablen.c                                        :+:      :+:    :+:   */
+/*   ft_rl_clear_history.c                              :+:      :+:    :+:   */
 /*						      +:+ +:+	      +:+     */
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
-/*   Created: 2023/12/12 20:42:13 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2024/01/06 20:15:51 by marcosv2         ###   ########.fr       */
+/*   Created: 2024/01/06 21:18:04 by marcosv2	       #+#    #+#	      */
+/*   Updated: 2024/01/06 21:29:54 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tablen(char **tab)
+void	ft_rl_clear_history(void)
 {
-	int	i;
-
-	if (!tab)
-		return (-1);
-	i = 0;
-	while (tab[i])
-		i++;
-	return (i);
+	ft_freetab(ft_add_history(NULL));
 }

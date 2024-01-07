@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/10/27 19:08:14 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2024/01/03 05:46:49 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/06 21:24:23 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -111,8 +111,9 @@ int		ft_toupper(int c);
 int		ft_tolower(int c);
 
 //// ft_mem
-t_clist	*ft_nfree_clst(t_clist **mem);
-char	*ft_nfree_str(char **mem);
+t_clist	*ft_nfreeclst(t_clist **mem);
+char	**ft_nfreetab(char ***mem);
+char	*ft_nfreestr(char **mem);
 void	*ft_calloc(size_t nmemb, size_t size);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memset(void *s, int c, size_t n);
@@ -174,14 +175,14 @@ char	*ft_strrem_end(char **old);
 char	*ft_strrem_n(char **old, int n);
 
 //// ft_tab
-char	**ft_tabcpy(char **old);
+char	**ft_tabdup(char **old);
 char	**ft_freetab(char **tab);
-char	**ft_tabadd_bgn(char **old, char *add);
-char	**ft_tabadd_end(char **old, char *add);
-char	**ft_tabadd_n(char **old, char *add, int n);
-char	**ft_tabrem_bgn(char **old);
-char	**ft_tabrem_end(char **old);
-char	**ft_tabrem_n(char **old, int n);
+char	**ft_tabadd_bgn(char ***old, char *add);
+char	**ft_tabadd_end(char ***old, char *add);
+char	**ft_tabadd_n(char ***old, char *add, int n);
+char	**ft_tabrem_bgn(char ***old);
+char	**ft_tabrem_end(char ***old);
+char	**ft_tabrem_n(char ***old, int n);
 char	*ft_tabsmove(char **tab, int start, int end);
 int		ft_tablen(char **tab);
 
@@ -255,9 +256,10 @@ int		rl_checkreset(t_readline *rl);
 int		ft_rlconfig(int id, size_t act, int val);
 char	ft_buffer_read(t_readline *rl);
 char	rl_bufferuse(t_readline *rl);
-char	**ft_rlhistory(char *new);
+char	**ft_add_history(char *new);
 char	*ft_sreadline(char *prompt);
 char	*ft_readline(char *prompt);
+void	ft_rl_clear_history(void);
 void	rl_termios_ch(int opt);
 void	rl_init(t_readline *rl, char *prompt);
 void	rl_getcp(int *x, int *y, t_readline *rl);

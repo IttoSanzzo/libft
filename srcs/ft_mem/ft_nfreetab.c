@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*									      */
 /*							  :::	   ::::::::   */
-/*   ft_tablen.c                                        :+:      :+:    :+:   */
+/*   ft_nfreetab.c                                      :+:      :+:    :+:   */
 /*						      +:+ +:+	      +:+     */
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
-/*   Created: 2023/12/12 20:42:13 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2024/01/06 20:15:51 by marcosv2         ###   ########.fr       */
+/*   Created: 2023/12/12 20:48:55 by marcosv2	       #+#    #+#	      */
+/*   Updated: 2024/01/06 20:24:26 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tablen(char **tab)
+char	**ft_nfreetab(char ***mem)
 {
 	int	i;
 
-	if (!tab)
-		return (-1);
-	i = 0;
-	while (tab[i])
-		i++;
-	return (i);
+	i = -1;
+	if (!*mem)
+		return (NULL);
+	while (mem[0][++i])
+		ft_free(mem[0][i]);
+	if (mem)
+		ft_free(*mem);
+	*mem = NULL;
+	return (*mem);
 }
