@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/10/27 19:08:14 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2024/01/07 00:59:35 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/07 01:27:07 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define LIBFT_H
 
 //// Lib Includes
+# include "ft_colors.h"
+# include "ft_macros.h"
+# include "ft_structs.h"
 # include <stdio.h>
 # include <stdarg.h>
 # include <stdlib.h>
@@ -24,70 +27,6 @@
 # include <termios.h>
 # include <sys/wait.h>
 # include <sys/ioctl.h>
-
-//// Macros
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1
-# endif
-# ifndef INT_MIN
-#  define INT_MIN -2147483648
-# endif
-# ifndef INT_MAX
-#  define INT_MAX 2147483647
-# endif
-# ifndef GMEM_BUFFER
-#  define GMEM_BUFFER 1024
-# endif
-# ifndef STDERR
-#  define STDERR 2
-# endif
-# define CP_BUFFER 13
-# define RL_FORCE_END 999
-# define PUTV 1
-# define GETV 0
-
-/// Colors
-# define C_WHITE	"\033[0m"
-# define C_YELLOW	"\033[38;5;226m"
-# define C_ORANGE	"\033[38;5;208m"
-# define C_PURPLE	"\033[38;5;93m"
-# define C_LBLUE	"\033[38;5;32m"
-# define C_DBLUE	"\033[38;5;21m"
-# define C_BROWN	"\033[38;5;130m"
-# define C_GREEN	"\033[38;5;40m"
-# define C_CYAN		"\033[38;5;37m"
-# define C_RED		"\033[38;5;196m"
-
-// Struct Define
-typedef struct s_list
-{
-	void			*val;
-	struct s_list	*next;
-}	t_list;
-
-typedef struct s_clist
-{
-	char			val;
-	struct s_clist	*next;
-}	t_clist;
-
-typedef struct s_readline
-{
-	int				home[2];
-	int				end[2];
-	int				move;
-	int				hlen;
-	int				hpos;
-	int				spos;
-	int				vpos;
-	int				pos;
-	int				len;
-	char			**his;
-	char			*prompt;
-	char			ch;
-	struct s_clist	*line;
-	struct s_clist	*buffer;
-}	t_readline;
 
 ////// SOURCE FILES
 //// ft_isx
