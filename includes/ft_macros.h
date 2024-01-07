@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2024/01/07 01:12:27 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2024/01/07 01:17:30 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/07 01:37:55 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -40,6 +40,14 @@
 # endif
 # ifndef STDERR
 #  define STDERR 2
+# endif
+
+// Exit Codes
+# ifndef EXIT_SUCC
+#  define EXIT_SUCC 0
+# endif
+# ifndef EXIT_FAIL
+#  define EXIT_FAIL 1
 # endif
 
 // Miscs
