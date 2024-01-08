@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/10/27 19:08:14 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2024/01/08 00:37:05 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/08 00:39:23 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -196,7 +196,7 @@ char	**ft_add_history(char *new);
 char	*ft_sreadline(char *prompt);
 char	*ft_readline(const char *prompt);
 void	rl_getcp(int *x, int *y, t_readline *rl);
-void	rl_init(t_readline *rl, char *prompt);
+void	rl_init(t_readline *rl, const char *prompt);
 void	rl_get_specials(t_readline *rl);
 void	rl_do_moviments(t_readline *rl);
 void	rl_do_backspace(t_readline *rl);

@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/12/29 10:02:53 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2024/01/08 00:36:43 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/08 00:40:22 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ char	ft_buffer_read(t_readline *rl)
 	return (rl_bufferuse(rl));
 }
 
-void	rl_init(t_readline *rl, char *prompt)
+void	rl_init(t_readline *rl, const char *prompt)
 {
 	ft_freeclst(&rl->line);
 	rl->buffer = NULL;
@@ -79,7 +79,7 @@ void	rl_init(t_readline *rl, char *prompt)
 	rl->ch = 0;
 	rl->prompt = prompt;
 	if (rl->prompt && !ft_rlconfig(2, GETV, 0))
-		ft_putstr(rl->prompt);
+		ft_putstr((char *)rl->prompt);
 	ft_rlconfig(2, PUTV, 0);
 	rl_save_home(rl);
 	ft_ansi_sc();

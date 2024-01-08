@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/12/29 10:35:22 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2024/01/04 03:01:45 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/08 00:41:11 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	rl_cleard(t_readline *rl)
 {
 	ft_ansi_dfd();
 	if (rl->prompt)
-		ft_putstr(rl->prompt);
+		ft_putstr((char *)rl->prompt);
 	rl_save_home(rl);
 	ft_putclst(rl->line);
 	rl_save_end(rl);

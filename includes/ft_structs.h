@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2024/01/07 01:27:16 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2024/01/07 01:29:40 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/08 00:39:54 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ typedef struct s_readline
 	int				pos;
 	int				len;
 	char			**his;
-	char			*prompt;
 	char			ch;
+	const char		*prompt;
 	struct s_clist	*line;
 	struct s_clist	*buffer;
 }	t_readline;
