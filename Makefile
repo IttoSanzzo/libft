@@ -6,7 +6,7 @@
 #    By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	       #
 #						  +#+#+#+#+#+	+#+	       #
 #    Created: 2023/11/26 19:20:16 by marcosv2	       #+#    #+#	       #
-#    Updated: 2024/01/08 03:01:04 by marcosv2         ###   ########.fr        #
+#    Updated: 2024/01/08 08:23:47 by marcosv2         ###   ########.fr        #
 #									       #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ C_COMP	= cc
 C_ARRC	= ar -rc
 C_FLAG	= -Wall -Werror -Wextra
 C_REMO	= rm -rf
+C_PUTS	= printf
 
 # Dirs
 
@@ -235,55 +236,44 @@ F_OBJS	= $(addprefix $(D_OBJS), $(N_OBJS))
 
 # Colors
 P_WHITE = \033[0m
-P_LBLUE = \033[0;32m
-P_BROWN = \033[0;33m
-P_DBLUE = \033[0;34m
-P_NCYAN = \033[0;36m
+P_LBLUE = \033[38;5;32m
+P_BROWN = \033[38;5;130m
+P_DBLUE = \033[38;5;21m
+P_NCYAN = \033[38;5;37m
 P_GREEN = \033[38;5;40m
+P_MAGEN	= \033[38;5;99m
+P_NWINE	= \033[38;5;88m
+P_NPINK	= \033[38;5;163m
 
 # Mandatory Rules
 
 all		: $(NAME)
 
 $(D_OBJS)%.o	: $(D_SRCS)*/%.c
-	@printf "\t$(P_BROWN)Generating $(NAME)..: %-33.33s\r $(P_WHITE)" $@
+	@$(C_PUTS) "\t$(P_BROWN)Generating $(NAME)..: %-33.33s\r $(P_WHITE)" $@
 	@$(C_COMP) $(C_FLAG) -c $< -o $@ $(D_HDRS)
 
 $(D_OBJS)	:
-	@echo "$(P_LBLUE)Starting $(NAME) compilation...$(P_WHITE)"
-	@echo "\n\t$(P_DBLUE)Creating $(NAME) objects directory...$(P_WHITE)"
+	@$(C_PUTS) "$(P_NPINK)Starting $(NAME) compilation...$(P_WHITE)\n"
+	@$(C_PUTS) "\t$(P_MAGEN)Creating $(NAME) objects directory...$(P_WHITE)\n"
 	@mkdir $(D_OBJS)
 
 $(NAME)		:  $(D_OBJS) $(F_OBJS)
-	@echo "\n\t$(P_NCYAN)Finishing $(NAME)..: $(P_LBLUE)$(NAME)$(P_WHITE)\n"
+	@$(C_PUTS) "\n\t$(P_NCYAN)Finishing $(NAME)..: $(P_LBLUE)$(NAME)$(P_WHITE)\n"
 	@$(C_ARRC) $(NAME) $(F_OBJS)
-	@echo "$(P_GREEN)Done!$(P_WHITE)"
+	@$(C_PUTS) "$(P_GREEN)Done!$(P_WHITE)"
 
 clean		:
-	@echo "$(P_DBLUE)Cleaning $(NAME) objects...$(P_WHITE)"
+	@$(C_PUTS) "$(P_NWINE)Cleaning $(NAME) objects...$(P_WHITE)\n"
 	@$(C_REMO) $(D_OBJS)
 
 fclean		: clean
-	@echo "$(P_DBLUE)Deleting $(NAME)...$(P_WHITE)"
+	@$(C_PUTS) "$(P_NWINE)Deleting $(NAME)...$(P_WHITE)\n"
 	@${C_REMO} $(NAME)
 	@${C_REMO} COMPILADO.out
 
 re		: fclean all
 
-# Personals
-
-normiet		:
-	@norminette -R CheckForbiddenSourceHeader | grep Error! | wc -l
-
-tc		: all
-	@$(C_COMP) $(C_FLAG) -o COMPILADO.out mainlibft.c libft.a
-
-ohayou		: tc
-	@./COMPILADO.out ohayou
-
-valt		: tc
-	@valgrind ./COMPILADO.out default
-
 # Phony
 
-.PHONY: all clean fclean re tc ohayou valt
+.PHONY: all clean fclean re
