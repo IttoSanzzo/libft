@@ -6,7 +6,7 @@
 #    By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	       #
 #						  +#+#+#+#+#+	+#+	       #
 #    Created: 2023/11/26 19:20:16 by marcosv2	       #+#    #+#	       #
-#    Updated: 2024/01/08 08:25:06 by marcosv2         ###   ########.fr        #
+#    Updated: 2024/01/08 08:30:35 by marcosv2         ###   ########.fr        #
 #									       #
 # **************************************************************************** #
 
@@ -243,7 +243,7 @@ P_NCYAN = \033[38;5;37m
 P_GREEN = \033[38;5;40m
 P_MAGEN	= \033[38;5;99m
 P_NWINE	= \033[38;5;88m
-P_NPINK	= \033[38;5;163m
+P_LGREN = \033[38;5;42m
 
 # Mandatory Rules
 
@@ -254,7 +254,7 @@ $(D_OBJS)%.o	: $(D_SRCS)*/%.c
 	@$(C_COMP) $(C_FLAG) -c $< -o $@ $(D_HDRS)
 
 $(D_OBJS)	:
-	@$(C_PUTS) "$(P_NPINK)Starting $(NAME) compilation...$(P_WHITE)\n"
+	@$(C_PUTS) "$(P_LGREN)Starting $(NAME) compilation...$(P_WHITE)\n"
 	@$(C_PUTS) "\t$(P_MAGEN)Creating $(NAME) objects directory...$(P_WHITE)\n"
 	@mkdir $(D_OBJS)
 
