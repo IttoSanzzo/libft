@@ -6,7 +6,7 @@
 #    By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	       #
 #						  +#+#+#+#+#+	+#+	       #
 #    Created: 2023/11/26 19:20:16 by marcosv2	       #+#    #+#	       #
-#    Updated: 2024/01/06 21:22:12 by marcosv2         ###   ########.fr        #
+#    Updated: 2024/01/08 03:01:04 by marcosv2         ###   ########.fr        #
 #									       #
 # **************************************************************************** #
 
@@ -172,6 +172,7 @@ F_SRCS	+= $(addprefix $(D_SRCS)$(DS_ANSI), $(N_ANSI))
 DS_UTILS	= ft_utils/
 N_UTILS		= ft_stdout_off.c		\
 		  ft_stdout_on.c		\
+		  ft_getarg.c			\
 		  ft_getarg_p.c			\
 		  ft_getrstr_p.c		\
 		  ft_getstr_p.c			\
