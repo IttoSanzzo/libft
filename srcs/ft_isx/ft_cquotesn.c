@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*									      */
 /*							  :::	   ::::::::   */
-/*   ft_cquotes.c                                       :+:      :+:    :+:   */
+/*   ft_cquotesn.c                                      :+:      :+:    :+:   */
 /*						      +:+ +:+	      +:+     */
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/12/18 16:42:19 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2024/01/08 20:32:09 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/08 20:32:28 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_cquotes(char *s)
+int	ft_cquotesn(char *s, int n)
 {
 	int	i;
 	int	open;
 
 	i = -1;
 	open = 0;
-	if (!s)
+	if (!s || n < 0)
 		return (0);
-	while (s[++i])
+	while (s[++i] && i < n)
 	{
 		if (i > 0 && s[i - 1] == '\\')
 			continue ;
