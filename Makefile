@@ -6,7 +6,7 @@
 #    By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	       #
 #						  +#+#+#+#+#+	+#+	       #
 #    Created: 2023/11/26 19:20:16 by marcosv2	       #+#    #+#	       #
-#    Updated: 2024/01/08 08:23:47 by marcosv2         ###   ########.fr        #
+#    Updated: 2024/01/08 08:25:06 by marcosv2         ###   ########.fr        #
 #									       #
 # **************************************************************************** #
 
@@ -261,7 +261,7 @@ $(D_OBJS)	:
 $(NAME)		:  $(D_OBJS) $(F_OBJS)
 	@$(C_PUTS) "\n\t$(P_NCYAN)Finishing $(NAME)..: $(P_LBLUE)$(NAME)$(P_WHITE)\n"
 	@$(C_ARRC) $(NAME) $(F_OBJS)
-	@$(C_PUTS) "$(P_GREEN)Done!$(P_WHITE)"
+	@$(C_PUTS) "$(P_GREEN)Done!$(P_WHITE)\n"
 
 clean		:
 	@$(C_PUTS) "$(P_NWINE)Cleaning $(NAME) objects...$(P_WHITE)\n"
