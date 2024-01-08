@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/12/29 10:02:53 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2024/01/06 21:29:05 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/08 00:36:43 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ static void	rl_others(t_readline *rl)
 		rl_addchar(rl);
 }
 
-char	*ft_readline(char *prompt)
+char	*ft_readline(const char *prompt)
 {
 	t_readline	rl;
 
