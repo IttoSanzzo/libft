@@ -6,7 +6,7 @@
 #    By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	       #
 #						  +#+#+#+#+#+	+#+	       #
 #    Created: 2023/11/26 19:20:16 by marcosv2	       #+#    #+#	       #
-#    Updated: 2024/01/08 08:30:35 by marcosv2         ###   ########.fr        #
+#    Updated: 2024/01/08 08:36:33 by marcosv2         ###   ########.fr        #
 #									       #
 # **************************************************************************** #
 
@@ -237,7 +237,7 @@ F_OBJS	= $(addprefix $(D_OBJS), $(N_OBJS))
 # Colors
 P_WHITE = \033[0m
 P_LBLUE = \033[38;5;32m
-P_BROWN = \033[38;5;130m
+P_PRPLE = \033[38;5;93m
 P_DBLUE = \033[38;5;21m
 P_NCYAN = \033[38;5;37m
 P_GREEN = \033[38;5;40m
@@ -250,7 +250,7 @@ P_LGREN = \033[38;5;42m
 all		: $(NAME)
 
 $(D_OBJS)%.o	: $(D_SRCS)*/%.c
-	@$(C_PUTS) "\t$(P_BROWN)Generating $(NAME)..: %-33.33s\r $(P_WHITE)" $@
+	@$(C_PUTS) "\t$(P_PRPLE)Generating $(NAME)..: %-33.33s\r $(P_WHITE)" $@
 	@$(C_COMP) $(C_FLAG) -c $< -o $@ $(D_HDRS)
 
 $(D_OBJS)	:
