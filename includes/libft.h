@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/10/27 19:08:14 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2024/01/08 03:01:47 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/08 03:49:11 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -91,15 +91,15 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_strdrep(char *body, char *news);
+char	*ft_strdrep(char **body, char *news);
 char	*ft_strrep(char *body, char *news);
 char	**ft_splitq(char const *s, char c);
 char	*ft_strrchr(const char *s, int c);
 char	**ft_split(char const *s, char c);
 char	*ft_strchr(const char *s, int c);
-char	*ft_freejoin(char *s1, char *s2);
-char	*ft_prejoin(char *s1, char *s2);
-char	*ft_sujoin(char *s1, char *s2);
+char	*ft_freejoin(char **s1, char **s2);
+char	*ft_prejoin(char *s1, char **s2);
+char	*ft_sujoin(char **s1, char *s2);
 char	*ft_strdup(const char *s);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 int		ft_strncmp(const char *s1, const char *s2, size_t n);

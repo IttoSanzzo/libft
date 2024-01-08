@@ -6,16 +6,16 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/12/12 20:03:28 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/26 00:14:13 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/08 03:48:39 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdrep(char *body, char *news)
+char	*ft_strdrep(char **body, char *news)
 {
-	if (body)
-		free(body);
-	body = news;
-	return (body);
+	if (*body)
+		free(*body);
+	*body = news;
+	return (*body);
 }

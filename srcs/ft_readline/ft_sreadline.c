@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*									      */
 /*							  :::	   ::::::::   */
-/*   ft_readline.c                                      :+:      :+:    :+:   */
+/*   ft_sreadline.c                                     :+:      :+:    :+:   */
 /*						      +:+ +:+	      +:+     */
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/12/08 09:13:14 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/28 22:23:56 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/08 03:50:06 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_sreadline(char *prompt)
 		return (NULL);
 	while (*buffer != '\n')
 	{
-		line = ft_sujoin(line, buffer);
+		line = ft_sujoin(&line, buffer);
 		while (read(0, buffer, 1) == 0)
 			buffer[0] = 0;
 	}
