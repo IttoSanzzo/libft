@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/12/18 16:42:19 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2024/01/08 20:32:09 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/09 00:52:12 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ int	ft_cquotes(char *s)
 		if (i > 0 && s[i - 1] == '\\')
 			continue ;
 		else if (open == 0 && s[i] == '\"')
-			open = 1;
-		else if (open == 0 && s[i] == '\'')
 			open = 2;
-		else if (open == 1 && s[i] == '\"')
+		else if (open == 0 && s[i] == '\'')
+			open = 1;
+		else if (open == 2 && s[i] == '\"')
 			open = 0;
-		else if (open == 2 && s[i] == '\'')
+		else if (open == 1 && s[i] == '\'')
 			open = 0;
 	}
 	return (open);
