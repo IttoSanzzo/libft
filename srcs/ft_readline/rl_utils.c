@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/12/29 10:35:22 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2024/01/08 00:41:11 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/09 23:35:08 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -46,8 +46,13 @@ void	rl_cleard(t_readline *rl)
 
 char	rl_bufferuse(t_readline *rl)
 {
-	rl->ch = rl->buffer->val;
-	ft_clstrem_bgn(&rl->buffer);
+	if (!rl->buffer)
+		rl->ch = 0;
+	else
+	{
+		rl->ch = rl->buffer->val;
+		ft_clstrem_bgn(&rl->buffer);
+	}
 	return (rl->ch);
 }
 
