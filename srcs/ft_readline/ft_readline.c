@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/12/29 10:02:53 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2024/01/09 22:51:05 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/09 22:59:02 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ void	rl_init(t_readline *rl, const char *prompt)
 	rl->vpos = 0;
 	rl->pos = 0;
 	rl->len = 0;
+	rl->ch = 0;
 	rl->home[0] = 0;
 	rl->home[1] = 0;
 	rl->end[0] = 0;
