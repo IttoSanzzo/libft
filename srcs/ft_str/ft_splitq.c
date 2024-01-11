@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/10/27 20:40:28 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2024/01/11 03:10:12 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/11 03:21:27 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -49,9 +49,9 @@ char	**ft_splitq(char const *s)
 	tab = (char **)ft_calloc(len + 1, sizeof(char *));
 	y = -1;
 	i = 0;
-	while (temp[i] == '\0' && len > 0)
+	while (temp && temp[i] == '\0' && len > 0)
 		i++;
-	while (++y < len)
+	while (tab && ++y < len)
 	{
 		tab[y] = ft_strdup((char *)(temp + i));
 		while (temp[i])
