@@ -6,17 +6,17 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2024/01/11 07:06:08 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2024/01/11 07:09:10 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/11 07:15:26 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_trash_stdin(void)
+void	ft_trash_stdin(int dsecs)
 {
 	char	c;
 
 	c = 4;
 	while (c != '\0')
-		c = ft_getchar_unb(2);
+		c = ft_getchar_unb(dsecs);
 }
