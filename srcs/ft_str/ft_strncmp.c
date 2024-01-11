@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/10/27 20:45:56 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/10/27 20:46:03 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/11 15:09:52 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	count;
 
+	if (!s1 && !s2)
+		return (0);
+	else if (!s1 || !s2)
+		return (1);
 	count = 0;
 	if (n <= 0)
 		return (0);
