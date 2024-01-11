@@ -6,115 +6,59 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/10/27 20:40:28 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2023/12/26 01:13:40 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/11 03:10:12 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	wc_q(char const *s, char c)
+static int	wc_q(char **s)
 {
 	int	wcount;
 	int	open;
 	int	flag;
 	int	i;
 
-	open = -1;
+	open = 0;
 	i = -1;
 	flag = 1;
 	wcount = 0;
-	while (s[++i])
+	while (s[0][++i])
 	{
-		if (s[i] == c && !(i > 0 && s[i - 1] == '\\'))
-			open = -open;
-		if (s[i] == ' ' && open == -1)
-			flag = 1;
-		else if (s[i] && flag == 1 && ++wcount)
+		ft_squotes(*s, &open, &i);
+		if (s[0][i] == ' ' && open == 0 && ++flag)
+			s[0][i] = '\0';
+		else if (s[0][i] && flag && ++wcount)
 			flag = 0;
 	}
 	return (wcount);
 }
 
-static int	wlq(char const *s, char c)
+char	**ft_splitq(char const *s)
 {
-	int	wlen;
-	int	open;
-	int	i;
-
-	open = -1;
-	i = -1;
-	wlen = 0;
-	while (s[++i])
-	{
-		if (s[i] == '\\' || s[i] == c)
-		{
-			if (s[i] == '\\' && s[++i])
-				wlen++;
-			if (s[i] == c)
-				open = -open;
-			if (s[i])
-				continue ;
-		}
-		if ((s[i] == ' ' && open == -1) || s[i] == '\0')
-			break ;
-		wlen++;
-	}
-	return (wlen);
-}
-
-static char	*next_quote_q(char const *s, int *i, char c, char **tab)
-{
-	int		open;
-	int		p;
-	char	*quote;
-
-	quote = (char *)ft_calloc(wlq((char *)(s + (*i)--), c) + 1, sizeof(char));
-	if (!quote)
-		return ((char *)ft_freetab(tab));
-	open = -1;
-	p = -1;
-	while (s[++(*i)])
-	{
-		if (s[*i] == '\\' || s[*i] == c)
-		{
-			if (s[*i] == '\\' && s[++(*i)])
-				quote[++p] = s[*i];
-			if (s[*i] == c)
-				open = -open;
-			if (s[*i])
-				continue ;
-		}
-		if ((s[*i] == ' ' && open == -1) || s[*i] == '\0')
-			break ;
-		quote[++p] = s[*i];
-	}
-	return (quote);
-}
-
-char	**ft_splitq(char const *s, char c)
-{
+	int		len;
 	int		i;
-	int		wc;
 	int		y;
+	char	*temp;
 	char	**tab;
 
 	if (!s)
 		return (NULL);
-	wc = wc_q(s, c);
-	tab = (char **)ft_calloc(wc + 1, sizeof(char *));
-	if (!tab)
-		return (NULL);
-	i = 0;
+	temp = ft_strdup(s);
+	len = wc_q(&temp);
+	tab = (char **)ft_calloc(len + 1, sizeof(char *));
 	y = -1;
-	while (s[i] && ++y < wc)
+	i = 0;
+	while (temp[i] == '\0' && len > 0)
+		i++;
+	while (++y < len)
 	{
-		while (s[i] == ' ')
+		tab[y] = ft_strdup((char *)(temp + i));
+		while (temp[i])
 			i++;
-		if (!s[i])
-			break ;
-		tab[y] = next_quote_q(s, &i, c, tab);
-		if (!tab)
-			return (NULL);
+		while (!temp[i] && y < len - 1)
+			i++;
 	}
+	ft_nfreestr(&temp);
 	return (tab);
 }

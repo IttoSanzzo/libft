@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/10/27 19:08:14 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2024/01/10 02:37:14 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/11 02:30:14 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strdrep(char **body, char *news);
 char	*ft_strrep(char *body, char *news);
-char	**ft_splitq(char const *s, char c);
+char	**ft_splitq(char const *s);
 char	*ft_strrchr(const char *s, int c);
 char	**ft_split(char const *s, char c);
 char	*ft_strchr(const char *s, int c);
