@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2024/01/12 00:56:42 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2024/01/12 01:48:14 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/12 01:53:38 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -25,8 +25,9 @@ static int	strqlen(char *str)
 	{
 		ft_squotes(str, &open, i);
 		if ((str[i] != '\"' && str[i] != '\'')
-			|| (open != 2 && str[i] == '\"')
-			|| (open != 1 && str[i] == '\''))
+			|| (open == 1 && str[i] == '\"')
+			|| (open == 2 && str[i] == '\'')
+			|| (i > 0 && (str[i - 1] == '\\')))
 			len++;
 	}
 	return (len);
@@ -50,7 +51,8 @@ void	ft_strrem_q(char **str)
 		ft_squotes(*str, &open, i);
 		if ((str[0][i] != '\"' && str[0][i] != '\'')
 			|| (open != 2 && str[0][i] == '\"')
-			|| (open != 1 && str[0][i] == '\''))
+			|| (open != 1 && str[0][i] == '\'')
+			|| (i > 0 && (str[i - 1] == '\\')))
 			new[++y] = str[0][i];
 	}
 	ft_nfreestr(str);
