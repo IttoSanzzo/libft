@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2024/01/12 00:56:42 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2024/01/12 01:38:57 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/12 01:42:47 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ static int	strqlen(char *str)
 	int	len;
 	int	i;
 
+	open = 0;
 	len = 0;
 	i = -1;
 	while (str[++i])
@@ -41,6 +42,7 @@ void	ft_strrem_q(char **str)
 	if (!str || !*str)
 		return ;
 	new = (char *)ft_calloc(strqlen(*str) + 1, sizeof(char));
+	open = 0;
 	i = -1;
 	y = -1;
 	while (str[0][++i])
