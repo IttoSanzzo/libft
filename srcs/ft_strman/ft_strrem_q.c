@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2024/01/12 00:56:42 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2024/01/12 01:45:08 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/12 01:46:56 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ static int	strqlen(char *str)
 
 void	ft_strrem_q(char **str)
 {
-	int	open;
-	int	i;
-	int	y;
+	int		open;
+	int		i;
+	int		y;
 	char	*new;
 
 	if (!str || !*str)
