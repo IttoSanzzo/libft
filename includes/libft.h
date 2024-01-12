@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/10/27 19:08:14 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2024/01/11 07:15:41 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/12 01:16:42 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@
 
 ////// SOURCE FILES
 //// ft_isx
-int		ft_squotes(char *line, int *open, int *i);
+int		ft_squotes(char *line, int *open, int i);
 int		ft_cquotesn(char *s, int n);
 int		ft_cquotes(char *s);
 int		ft_cend(char *s);
@@ -114,6 +114,7 @@ char	*ft_strrem_bgn(char **old);
 char	*ft_strrem_end(char **old);
 char	*ft_strrem_n(char **old, int n);
 char	*ft_strnew(char **old, char add);
+void	ft_strrem_q(char **str);
 
 //// ft_tab
 char	*ft_tabsmove(char **tab, int start, int end);
@@ -125,6 +126,7 @@ char	**ft_tabrem_end(char ***old);
 char	**ft_tabrem_n(char ***old, int n);
 char	**ft_freetab(char **tab);
 char	**ft_tabdup(char **old);
+void	ft_tabrem_q(char **tab);
 int		ft_tablen(char **tab);
 
 //// ft_ansi
