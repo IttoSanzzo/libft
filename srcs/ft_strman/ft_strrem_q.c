@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2024/01/12 00:56:42 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2024/01/12 01:42:47 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/12 01:45:08 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ static int	strqlen(char *str)
 	{
 		ft_squotes(str, &open, i);
 		if ((str[i] != '\"' && str[i] != '\'')
-			|| (open == 1 && str[i] == '\"')
-			|| (open == 2 && str[i] == '\''))
+			|| (open != 2 && str[i] == '\"')
+			|| (open != 1 && str[i] == '\''))
 			len++;
 	}
 	return (len);
