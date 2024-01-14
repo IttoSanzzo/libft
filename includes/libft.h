@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/10/27 19:08:14 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2024/01/14 12:18:34 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/14 12:23:46 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -127,6 +127,7 @@ char	**ft_tabrem_end(char ***old);
 char	**ft_tabrem_n(char ***old, int n);
 char	**ft_freetab(char **tab);
 char	**ft_tabdup(char **old);
+void	ft_tabrem_bl(char **tab);
 void	ft_tabrem_q(char **tab);
 int		ft_tablen(char **tab);
 
