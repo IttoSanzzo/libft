@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/12/18 16:42:19 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2024/01/14 13:51:53 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/14 15:19:48 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	cquotes(char *line, int *open, int i, int *bl)
 {
-	if (line[i] == '\\' && !*bl)
+	if (*open != 1 && line[i] == '\\' && !*bl)
 	{
 		*bl = 1;
 		return (3);

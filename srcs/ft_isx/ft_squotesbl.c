@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2024/01/14 14:08:30 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2024/01/14 14:08:48 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/14 15:20:29 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_squotesbl(char *line, int *open, int i, int *bl)
 {
-	if (line[i] == '\\' && !*bl)
+	if (*open != 1 && line[i] == '\\' && !*bl)
 	{
 		*bl = 1;
 		return (3);
