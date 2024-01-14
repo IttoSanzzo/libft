@@ -6,7 +6,7 @@
 #    By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	       #
 #						  +#+#+#+#+#+	+#+	       #
 #    Created: 2023/11/26 19:20:16 by marcosv2	       #+#    #+#	       #
-#    Updated: 2024/01/14 14:10:22 by marcosv2         ###   ########.fr        #
+#    Updated: 2024/01/14 15:01:09 by marcosv2         ###   ########.fr        #
 #									       #
 # **************************************************************************** #
 
@@ -146,8 +146,7 @@ N_STRMAN	= ft_strnew.c			\
 		  ft_strrem_bgn.c		\
 		  ft_strrem_end.c		\
 		  ft_strrem_n.c			\
-		  ft_strrem_bl.c		\
-		  ft_strrem_q.c
+		  ft_strrem_qbl.c
 F_SRCS	+= $(addprefix $(D_SRCS)$(DS_STRMAN), $(N_STRMAN))
 
 DS_TAB		= ft_tab/
@@ -160,8 +159,7 @@ N_TAB		= ft_freetab.c			\
 		  ft_tabrem_bgn.c		\
 		  ft_tabrem_end.c		\
 		  ft_tabrem_n.c			\
-		  ft_tabrem_bl.c		\
-		  ft_tabrem_q.c			\
+		  ft_tabrem_qbl.c		\
 		  ft_tabsmove.c
 F_SRCS	+= $(addprefix $(D_SRCS)$(DS_TAB), $(N_TAB))
 

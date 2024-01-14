@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*									      */
 /*							  :::	   ::::::::   */
-/*   ft_tabrem_q.c                                      :+:      :+:    :+:   */
+/*   ft_tabrem_qbl.c                                    :+:      :+:    :+:   */
 /*						      +:+ +:+	      +:+     */
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2024/01/12 01:10:49 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2024/01/12 01:17:25 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/14 15:01:45 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_tabrem_q(char **tab)
+void	ft_tabrem_qbl(char **tab)
 {
 	int	i;
 
@@ -20,5 +20,5 @@ void	ft_tabrem_q(char **tab)
 	if (!tab || !*tab)
 		return ;
 	while (tab[++i])
-		ft_strrem_q(&tab[i]);
+		ft_strrem_qbl(&tab[i]);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*									      */
 /*							  :::	   ::::::::   */
-/*   ft_strrem_q.c                                      :+:      :+:    :+:   */
+/*   ft_strrem_qbl.c                                    :+:      :+:    :+:   */
 /*						      +:+ +:+	      +:+     */
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2024/01/12 00:56:42 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2024/01/14 14:25:27 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/14 14:57:12 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static int	strqlen(char *str)
 	return (len);
 }
 
-void	ft_strrem_q(char **str)
+void	ft_strrem_qbl(char **str)
 {
 	int		open;
 	int		bl;
