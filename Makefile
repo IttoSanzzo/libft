@@ -6,7 +6,7 @@
 #    By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	       #
 #						  +#+#+#+#+#+	+#+	       #
 #    Created: 2023/11/26 19:20:16 by marcosv2	       #+#    #+#	       #
-#    Updated: 2024/01/14 12:23:25 by marcosv2         ###   ########.fr        #
+#    Updated: 2024/01/14 14:10:22 by marcosv2         ###   ########.fr        #
 #									       #
 # **************************************************************************** #
 
@@ -37,6 +37,7 @@ N_ISX		= ft_isalnum.c			\
 		  ft_isprint.c			\
 		  ft_cquotesn.c			\
 		  ft_cquotes.c			\
+		  ft_squotesbl.c		\
 		  ft_squotes.c			\
 		  ft_cend.c
 F_SRCS	+= $(addprefix $(D_SRCS)$(DS_ISX), $(N_ISX))
