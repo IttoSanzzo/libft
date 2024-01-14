@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/10/27 20:40:28 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2024/01/14 14:15:44 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/14 14:17:09 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -27,11 +27,13 @@ static int	wc_q(char **s)
 	wcount = 0;
 	while (s[0][++i])
 	{
-		ft_squotesbl(*s, &open, i, &bl);
+		if (ft_squotesbl(*s, &open, i, &bl) == 3)
+			continue ;
 		if (s[0][i] == ' ' && open == 0 && ++flag)
 			s[0][i] = '\0';
 		else if (s[0][i] && flag && ++wcount)
 			flag = 0;
+		bl = 0;
 	}
 	return (wcount);
 }
