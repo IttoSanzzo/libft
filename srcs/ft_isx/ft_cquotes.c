@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/12/18 16:42:19 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2024/01/14 13:48:32 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/14 13:51:53 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	cquotes(char *line, int *open, int i, int *bl)
 		*bl = 1;
 		return (3);
 	}
-	if (*bl)
+	else if (*bl)
 		return (0);
 	else if (line[i] == '\"' || line[i] == '\'')
 	{
@@ -48,6 +48,10 @@ int	ft_cquotes(char *s)
 	if (!s)
 		return (0);
 	while (s[++i])
-		cquotes(s, &open, i, &bl);
+	{
+		if (cquotes(s, &open, i, &bl) == 3)
+			continue ;
+		bl = 0;
+	}
 	return (open);
 }
