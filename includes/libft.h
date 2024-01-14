@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/10/27 19:08:14 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2024/01/14 15:00:22 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/14 17:20:48 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -147,6 +147,7 @@ void	ft_ungetchar(char ch);
 void	ft_stdout_off(void);
 void	ft_stdout_on(void);
 void	ft_trash_stdin(int dsecs);
+void	ft_close(int fd);
 char	*ft_getarg(char **tab, char const *name);
 int		ft_getrstr_p(char **tab, char const *name);
 int		ft_getstr_p(char **tab, char const *name);
