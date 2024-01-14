@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2024/01/12 00:56:42 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2024/01/14 12:43:33 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/14 13:08:00 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -49,12 +49,12 @@ static int	strqlen(char *str)
 	i = -1;
 	while (str[++i])
 	{
-		if (qsquotes(str, &open, i, &bl) == 3)
+		if (qsquotes(str, &open, i, &bl) == 3 && ++len)
 			continue ;
 		if ((str[i] != '\"' && str[i] != '\'')
 			|| (open == 1 && str[i] == '\"')
 			|| (open == 2 && str[i] == '\'')
-			|| (i > 0 && bl))
+			|| (bl))
 			len++;
 		bl = 0;
 	}
@@ -83,7 +83,7 @@ void	ft_strrem_q(char **str)
 		if ((str[0][i] != '\"' && str[0][i] != '\'')
 			|| (open == 1 && str[0][i] == '\"')
 			|| (open == 2 && str[0][i] == '\'')
-			|| (i > 0 && bl))
+			|| (bl))
 			new[++y] = str[0][i];
 		bl = 0;
 	}
