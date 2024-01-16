@@ -6,7 +6,7 @@
 #    By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	       #
 #						  +#+#+#+#+#+	+#+	       #
 #    Created: 2023/11/26 19:20:16 by marcosv2	       #+#    #+#	       #
-#    Updated: 2024/01/14 17:20:09 by marcosv2         ###   ########.fr        #
+#    Updated: 2024/01/16 14:06:42 by marcosv2         ###   ########.fr        #
 #									       #
 # **************************************************************************** #
 
@@ -71,13 +71,14 @@ N_MEM		= ft_calloc.c			\
 F_SRCS	+= $(addprefix $(D_SRCS)$(DS_MEM), $(N_MEM))
 
 DS_PUT		= ft_put/
-N_PUT		= ft_putchar_fd.c		\
-		  ft_putendl_fd.c		\
-		  ft_putnbr_fd.c		\
-		  ft_putstr_fd.c		\
-		  ft_putchar.c			\
+N_PUT		= ft_putchar.c			\
+		  ft_putchar_fd.c		\
 		  ft_putstr.c			\
+		  ft_putstr_fd.c		\
+		  ft_putendl.c			\
+		  ft_putendl_fd.c		\
 		  ft_putnbr.c			\
+		  ft_putnbr_fd.c		\
 		  ft_puttab.c			\
 		  ft_putclstval.c		\
 		  ft_putclstpos.c		\
