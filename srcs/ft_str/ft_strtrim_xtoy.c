@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2024/01/16 16:34:09 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2024/01/16 16:58:21 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/16 17:09:40 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strtrim_xtoy(char *s, int x, int y)
 	int		i;
 	char	*trim;
 
-	if (!s || x < 0 || y < 0 || x < y || (int)ft_strlen(s) - 1 < x)
+	if (!s || x < 0 || y < 0 || x > y || (int)ft_strlen(s) - 1 < x)
 		return (NULL);
 	s = (char *)(s + x);
 	trim = (char *)ft_calloc((y - x) + 2, sizeof(char));
