@@ -6,25 +6,27 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/10/27 20:40:28 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2024/01/17 01:39:09 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/17 02:32:21 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	wc_s(char **s, char c)
+static int	wc_s(char *s, char c)
 {
 	int	wcount;
+	int	flag;
 	int	i;
 
 	i = -1;
+	flag = 1;
 	wcount = 0;
-	while (s[0][++i])
+	while (s[++i])
 	{
-		if (s[0][i] == c)
-			s[0][i] = '\0';
-		else if (s[0][i])
-			wcount++;
+		if (s[i] == c && ++flag)
+			s[i] = '\0';
+		else if (s[i] && flag && ++wcount)
+			flag = 0;
 	}
 	return (wcount);
 }
@@ -40,7 +42,7 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	temp = ft_strdup(s);
-	len = wc_s(&temp, c);
+	len = wc_s(temp, c);
 	tab = (char **)ft_calloc(len + 1, sizeof(char *));
 	y = -1;
 	i = 0;
