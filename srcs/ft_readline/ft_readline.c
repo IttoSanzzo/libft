@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/12/29 10:02:53 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2024/01/17 17:33:26 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/17 17:34:20 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ void	rl_init(t_readline *rl, const char *prompt)
 	if (rl->prompt && !ft_rlconfig(2, GETV, 0))
 		ft_putstr((char *)rl->prompt);
 	ft_rlconfig(2, PUTV, 0);
-	rl->ch = ft_buffer_read(&rl);
+	rl->ch = ft_buffer_read(rl);
 	rl_save_home(rl);
 	ft_ansi_sc();
 }
