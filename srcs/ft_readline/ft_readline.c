@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/12/29 10:02:53 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2024/01/09 23:30:59 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/17 16:40:33 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -120,7 +120,7 @@ char	*ft_readline(const char *prompt)
 			rl.ch = ft_buffer_read(&rl);
 		if (rl_checkreset(&rl) == 2)
 			return (NULL);
-		else if (rl_checkreset(&rl) == 1)
+		else if (rl_checkreset(&rl) == 1 || rl.ch == 0)
 			continue ;
 		if (rl.len == 0 && rl.ch == 4)
 			return ((char *)ft_freeclst(&rl.line));
