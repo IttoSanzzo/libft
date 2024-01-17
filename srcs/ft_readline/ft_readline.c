@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/12/29 10:02:53 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2024/01/17 16:40:33 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/17 17:33:26 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -87,6 +87,7 @@ void	rl_init(t_readline *rl, const char *prompt)
 	if (rl->prompt && !ft_rlconfig(2, GETV, 0))
 		ft_putstr((char *)rl->prompt);
 	ft_rlconfig(2, PUTV, 0);
+	rl->ch = ft_buffer_read(&rl);
 	rl_save_home(rl);
 	ft_ansi_sc();
 }
@@ -109,14 +110,16 @@ static void	rl_others(t_readline *rl)
 
 char	*ft_readline(const char *prompt)
 {
+	int			iters;
 	t_readline	rl;
 
 	rl_termios_ch(0);
 	rl.line = NULL;
 	rl_init(&rl, prompt);
-	while (rl.ch != '\n')
+	iters = 0;
+	while (rl.ch != '\n' && ++iters)
 	{
-		if (!rl_checkreset(&rl))
+		if (!rl_checkreset(&rl) && iters != 1)
 			rl.ch = ft_buffer_read(&rl);
 		if (rl_checkreset(&rl) == 2)
 			return (NULL);
