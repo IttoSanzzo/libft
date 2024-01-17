@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	      */
 /*						  +#+#+#+#+#+	+#+	      */
 /*   Created: 2023/10/27 19:08:14 by marcosv2	       #+#    #+#	      */
-/*   Updated: 2024/01/16 16:56:50 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/01/17 01:37:59 by marcosv2         ###   ########.fr       */
 /*									      */
 /* ************************************************************************** */
 
@@ -118,6 +118,7 @@ char	*ft_strrem_bgn(char **old);
 char	*ft_strrem_end(char **old);
 char	*ft_strrem_n(char **old, int n);
 char	*ft_strnew(char **old, char add);
+char	*ft_strrem_xtoy(char **s, int x, int y);
 void	ft_strrem_qbl(char **str);
 
 //// ft_tab
