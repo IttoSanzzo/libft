@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 20:08:31 by marcosv2          #+#    #+#             */
-/*   Updated: 2024/04/19 17:01:51 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/04/19 18:58:03 by marcosv2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,7 @@ void	ft_putclstpos(t_clist *lst, int pos);
 void	ft_putnclst(t_clist *lst, int n);
 void	ft_putclst(t_clist *lst);
 void	ft_putclstval(t_clist *lst);
+void	ft_putitab(int **tab, char *prompt, char *divider, int stop);
 
 //// ft_str
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
