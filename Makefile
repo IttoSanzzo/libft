@@ -6,7 +6,7 @@
 #    By: marcosv2 <marcosv2@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/19 20:09:05 by marcosv2          #+#    #+#              #
-#    Updated: 2024/04/19 10:02:13 by marcosv2         ###   ########.fr        #
+#    Updated: 2024/04/19 10:10:51 by marcosv2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,7 +69,8 @@ N_MEM		=	ft_calloc.c		\
 				ft_nfreetab.c	\
 				ft_nfreeclst.c	\
 				ft_gptr.c		\
-				ft_gint.c
+				ft_gint.c		\
+				ft_nfreeitab.c
 F_SRCS	+= $(addprefix $(D_SRCS)$(DS_MEM), $(N_MEM))
 
 DS_PUT		= ft_put/

@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 20:08:31 by marcosv2          #+#    #+#             */
-/*   Updated: 2024/04/19 10:02:23 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/04/19 10:10:36 by marcosv2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ char	**ft_nfreetab(char ***mem);
 char	*ft_nfreestr(char **mem);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		ft_gint(int id, size_t act, int val);
+int		**ft_nfreeitab(int ***itab);
 
 //// ft_put
 void	ft_puttab(char **tab, char *prompt);
