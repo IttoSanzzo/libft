@@ -6,7 +6,7 @@
 #    By: marcosv2 <marcosv2@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/19 20:09:05 by marcosv2          #+#    #+#              #
-#    Updated: 2024/04/19 11:09:56 by marcosv2         ###   ########.fr        #
+#    Updated: 2024/04/19 11:16:48 by marcosv2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -169,7 +169,8 @@ N_TAB		=	ft_freetab.c		\
 				ft_tabrem_end.c		\
 				ft_tabrem_n.c		\
 				ft_tabrem_qbl.c		\
-				ft_tabsmove.c
+				ft_tabsmove.c		\
+				ft_tabchrep.c
 F_SRCS	+= $(addprefix $(D_SRCS)$(DS_TAB), $(N_TAB))
 
 DS_ANSI		= ft_ansi/
