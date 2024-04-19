@@ -6,7 +6,7 @@
 #    By: marcosv2 <marcosv2@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/19 20:09:05 by marcosv2          #+#    #+#              #
-#    Updated: 2024/04/19 11:30:29 by marcosv2         ###   ########.fr        #
+#    Updated: 2024/04/19 16:41:06 by marcosv2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -115,7 +115,8 @@ N_STR		=	ft_strlen.c			\
 				ft_substr.c			\
 				ft_strchp.c			\
 				ft_strtrim_xtoy.c	\
-				ft_strchrep.c
+				ft_strchrep.c		\
+				ft_strchrem.c
 F_SRCS	+= $(addprefix $(D_SRCS)$(DS_STR), $(N_STR))
 
 DS_LST		= ft_lst/

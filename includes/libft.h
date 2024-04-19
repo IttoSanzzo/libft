@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 20:08:31 by marcosv2          #+#    #+#             */
-/*   Updated: 2024/04/19 11:30:22 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/04/19 16:40:50 by marcosv2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,6 +113,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_strchp(char *s, char c);
 void	ft_strchrep(char *str, char trg, char rep);
+void	ft_strchrem(char **str, char c);
 
 //// ft_strman
 char	*ft_stradd_bgn(char **old, char add);
