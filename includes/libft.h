@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 20:08:31 by marcosv2          #+#    #+#             */
-/*   Updated: 2024/04/19 09:43:24 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/04/19 09:53:05 by marcosv2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,6 +161,7 @@ int		ft_getstr_p(char **tab, char const *name);
 int		ft_getarg_p(char **tab, char const *name);
 int		ft_getchar(void);
 int		ft_getchar_unb(int dsecs);
+void	ft_endl(unsigned int n);
 
 //// ft_list
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
