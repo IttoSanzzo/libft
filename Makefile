@@ -6,7 +6,7 @@
 #    By: marcosv2 <marcosv2@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/19 20:09:05 by marcosv2          #+#    #+#              #
-#    Updated: 2024/04/19 09:32:20 by marcosv2         ###   ########.fr        #
+#    Updated: 2024/04/19 09:43:01 by marcosv2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,8 @@ N_TOX		=	ft_ttos.c		\
 				ft_itoa.c		\
 				ft_atoi.c		\
 				ft_tolower.c	\
-				ft_toupper.c
+				ft_toupper.c	\
+				ft_ftos.c
 F_SRCS	+= $(addprefix $(D_SRCS)$(DS_TOX), $(N_TOX))
 
 DS_MEM		= ft_mem/
