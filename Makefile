@@ -6,7 +6,7 @@
 #    By: marcosv2 <marcosv2@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/19 20:09:05 by marcosv2          #+#    #+#              #
-#    Updated: 2024/04/19 11:26:23 by marcosv2         ###   ########.fr        #
+#    Updated: 2024/04/19 11:30:29 by marcosv2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -200,7 +200,8 @@ N_UTILS		=	ft_stdout_off.c		\
 				ft_close.c			\
 				ft_getcwd.c			\
 				ft_endl.c			\
-				ft_check_file.c
+				ft_check_file.c		\
+				ft_check_ext.c
 F_SRCS	+= $(addprefix $(D_SRCS)$(DS_UTILS), $(N_UTILS))
 
 DS_PRINTF	= ft_printf/
