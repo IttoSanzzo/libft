@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:32:34 by marcosv2          #+#    #+#             */
-/*   Updated: 2024/04/19 16:58:05 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/04/19 16:59:56 by marcosv2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char	*ft_strchrem(char **str, char c)
 	if (!*str)
 		return (NULL);
 	i = -1;
-	i = -1;
+	j = -1;
 	ret = ft_calloc(ft_chrl(*str, c), sizeof(char));
 	while (str[0][++i])
 		if (str[0][i] != c)
