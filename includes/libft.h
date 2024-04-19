@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 20:08:31 by marcosv2          #+#    #+#             */
-/*   Updated: 2024/04/19 09:53:05 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/04/19 10:02:23 by marcosv2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ int		ft_atoi(const char *nptr);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 int		ft_ftos(char *file, char **output);
+int		ft_ftot(char *file, char ***output, char c);
 
 //// ft_mem
 t_clist	*ft_nfreeclst(t_clist **mem);
