@@ -6,7 +6,7 @@
 #    By: marcosv2 <marcosv2@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/19 20:09:05 by marcosv2          #+#    #+#              #
-#    Updated: 2024/04/19 10:10:51 by marcosv2         ###   ########.fr        #
+#    Updated: 2024/04/19 11:09:56 by marcosv2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -91,30 +91,31 @@ N_PUT		=	ft_putchar.c		\
 F_SRCS	+= $(addprefix $(D_SRCS)$(DS_PUT), $(N_PUT))
 
 DS_STR		= ft_str/
-N_STR		=	ft_strlen.c		\
-				ft_freejoin.c	\
-				ft_prejoin.c	\
-				ft_sujoin.c		\
-				ft_split.c		\
-				ft_splitq.c		\
-				ft_strchr.c		\
-				ft_strdup.c		\
-				ft_striteri.c	\
-				ft_strjoin.c	\
-				ft_strlcat.c	\
-				ft_strlcpy.c	\
-				ft_strcpy.c		\
-				ft_strlen.c		\
-				ft_strmapi.c	\
-				ft_strncmp.c	\
-				ft_strnstr.c	\
-				ft_strrchr.c	\
-				ft_strrep.c		\
-				ft_strdrep.c	\
-				ft_strtrim.c	\
-				ft_substr.c		\
-				ft_strchp.c		\
-				ft_strtrim_xtoy.c
+N_STR		=	ft_strlen.c			\
+				ft_freejoin.c		\
+				ft_prejoin.c		\
+				ft_sujoin.c			\
+				ft_split.c			\
+				ft_splitq.c			\
+				ft_strchr.c			\
+				ft_strdup.c			\
+				ft_striteri.c		\
+				ft_strjoin.c		\
+				ft_strlcat.c		\
+				ft_strlcpy.c		\
+				ft_strcpy.c			\
+				ft_strlen.c			\
+				ft_strmapi.c		\
+				ft_strncmp.c		\
+				ft_strnstr.c		\
+				ft_strrchr.c		\
+				ft_strrep.c			\
+				ft_strdrep.c		\
+				ft_strtrim.c		\
+				ft_substr.c			\
+				ft_strchp.c			\
+				ft_strtrim_xtoy.c	\
+				ft_strchrep.c
 F_SRCS	+= $(addprefix $(D_SRCS)$(DS_STR), $(N_STR))
 
 DS_LST		= ft_lst/
