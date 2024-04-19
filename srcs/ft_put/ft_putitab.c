@@ -6,7 +6,7 @@
 /*   By: marcosv2 <marcosv2@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 18:53:04 by marcosv2          #+#    #+#             */
-/*   Updated: 2024/04/19 18:58:06 by marcosv2         ###   ########.fr       */
+/*   Updated: 2024/04/19 19:01:16 by marcosv2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_putitab(int **tab, char *prompt, char *divider, int stop)
 		while (tab[y][++i] != stop)
 		{
 			ft_putnbr(tab[y][i]);
-			if (divider)
+			if (divider && tab[y][i + 1] != stop)
 				ft_putstr(divider);
 		}
 		ft_endl(1);
